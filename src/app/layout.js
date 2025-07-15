@@ -13,85 +13,6 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-export const metadata = {
-  metadataBase: new URL('https://builtbytim.dev'),
-  title: {
-    default: "Timileyin Pelumi - Full Stack Developer | Web, AI & Blockchain Expert",
-    template: "%s | Timileyin Pelumi - Full Stack Developer"
-  },
-  description: "Timileyin Pelumi is a product-minded full-stack developer from Nigeria specializing in web development, AI solutions, and blockchain applications. Expert in React, Next.js, Python, and modern tech stacks. Available for remote opportunities.",
-  keywords: [
-    "Full Stack Developer",
-    "Web Developer", 
-    "AI Developer",
-    "Blockchain Developer",
-    "React Developer",
-    "Next.js Developer",
-    "Python Developer",
-    "JavaScript Developer",
-    "Frontend Developer",
-    "Backend Developer",
-    "DeFi Developer",
-    "Smart Contract Developer",
-    "Remote Developer",
-    "Nigeria Developer",
-    "Timileyin Pelumi",
-    "Software Engineer",
-    "Product Engineer"
-  ],
-  authors: [{ name: "Timileyin Pelumi", url: "https://builtbytim.dev" }],
-  creator: "Timileyin Pelumi",
-  publisher: "Timileyin Pelumi",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  category: "Technology",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://builtbytim.dev",
-    siteName: "Timileyin Pelumi - Full Stack Developer",
-    title: "Timileyin Pelumi - Full Stack Developer | Web, AI & Blockchain Expert",
-    description: "Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain. Available for remote opportunities.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Timileyin Pelumi - Full Stack Developer Portfolio",
-      }
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@builtbytim",
-    creator: "@builtbytim",
-    title: "Timileyin Pelumi - Full Stack Developer | Web, AI & Blockchain Expert",
-    description: "Product-minded full-stack developer building clean, scalable solutions in web development, AI, and blockchain.",
-    images: ["/og-image.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: "your-google-verification-code", // Replace with actual verification code
-  },
-  alternates: {
-    canonical: "https://builtbytim.dev",
-  },
-};
-
-// JSON-LD Structured Data
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -99,10 +20,10 @@ const jsonLd = {
   alternateName: "Tim",
   description: "Full-stack developer and product-minded engineer specializing in web development, AI, and blockchain applications",
   url: "https://builtbytim.dev",
-  image: "https://builtbytim.dev/profile-image.jpg",
+  image: "https://builtbytim.dev/profile.jpg",
   sameAs: [
     "https://github.com/builtbytim",
-    "https://linkedin.com/in/timileyin-pelumi",
+    "https://linkedin.com/in/builtbytim",
     "https://twitter.com/builtbytim",
     "https://t.me/builtbytim"
   ],
@@ -127,10 +48,54 @@ const jsonLd = {
     "Smart Contracts",
     "DeFi",
     "Full Stack Development"
-  ],
-  alumniOf: {
-    "@type": "EducationalOrganization",
-    name: "Computer Engineering Program"
+  ]
+};
+
+export const metadata = {
+  title: {
+    default: "Timileyin Pelumi - Full Stack Developer | Web, AI & Blockchain Expert",
+    template: "%s | Timileyin Pelumi - Full Stack Developer"
+  },
+  description: "Timileyin Pelumi is a product-minded full-stack developer from Nigeria specializing in web development, AI solutions, and blockchain applications. Expert in React, Next.js, Python, and modern tech stacks. Available for remote opportunities.",
+  metadataBase: new URL('https://builtbytim.dev'),
+  openGraph: {
+    title: "Timileyin Pelumi - Full Stack Developer | Web, AI & Blockchain Expert",
+    description: "Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain. Available for remote opportunities.",
+    type: "website",
+    url: "https://builtbytim.dev",
+    siteName: "Timileyin Pelumi - Full Stack Developer",
+    images: [{
+      url: "/banner.png",
+      width: 1200,
+      height: 630,
+      alt: "Timileyin Pelumi - Full Stack Developer Portfolio"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Timileyin Pelumi - Full Stack Developer | Web, AI & Blockchain Expert",
+    description: "Product-minded full-stack developer building clean, scalable solutions in web development, AI, and blockchain.",
+    domain: "builtbytim.dev",
+    url: "https://builtbytim.dev",
+    images: ["/banner.png"]
+  },
+  alternates: {
+    canonical: "https://builtbytim.dev"
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    }
+  },
+  icons: {
+    icon: "/web-app-manifest-192x192.png",
+    apple: "/web-app-manifest-192x192.png"
   }
 };
 
@@ -162,7 +127,7 @@ export default function RootLayout({ children }) {
           Skip to main content
         </a>
         <div id="root" role="application" aria-label="Timileyin Pelumi Portfolio">
-        {children}
+          {children}
         </div>
       </body>
     </html>
