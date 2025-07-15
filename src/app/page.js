@@ -339,52 +339,14 @@ export default function Home() {
               className="flex items-center space-x-2 sm:space-x-3"
             >
               <div className="relative">
-                <svg 
-                  width="40" 
-                  height="40" 
-                  viewBox="0 0 100 100" 
+                <Image
+                  src="/logo.svg"
+                  alt="builtbytim logo"
+                  width={40}
+                  height={40}
                   className="drop-shadow-lg"
-                >
-                  {/* Outer Ring */}
-                  <circle 
-                    cx="50" 
-                    cy="50" 
-                    r="45" 
-                    fill="none" 
-                    stroke="url(#gradient1)" 
-                    strokeWidth="3"
-                    className="animate-pulse"
-                  />
-                  
-                  {/* Inner Circle */}
-                  <circle 
-                    cx="50" 
-                    cy="50" 
-                    r="35" 
-                    fill="url(#gradient2)" 
-                    className="opacity-90"
-                  />
-                  
-                  {/* Letter 'B' */}
-                  <path 
-                    d="M35 25 L35 75 L55 75 Q65 75 65 65 Q65 55 58 50 Q65 45 65 35 Q65 25 55 25 Z M42 32 L55 32 Q58 32 58 35 Q58 38 55 38 L42 38 Z M42 45 L55 45 Q58 45 58 50 Q58 55 55 55 L42 55 Z" 
-                    fill="white" 
-                    className="font-bold"
-                  />
-                  
-                  {/* Gradient Definitions */}
-                  <defs>
-                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#60a5fa" />
-                      <stop offset="50%" stopColor="#a855f7" />
-                      <stop offset="100%" stopColor="#ec4899" />
-                    </linearGradient>
-                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#3b82f6" />
-                      <stop offset="100%" stopColor="#8b5cf6" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                  priority
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-none">
@@ -1268,11 +1230,11 @@ export default function Home() {
                 avatar: "/chainpal.png"
               },
               {
-                quote: "Working with Tim was a game-changer for our project. He delivered a scalable AI solution that transformed our business operations.",
-                author: "Michael Rodriguez",
-                position: "Product Manager, Tech Corp",
-                linkedin: "https://www.linkedin.com/in/michael-rodriguez",
-                avatar: "/avatar-rodriguez.png"
+                quote: "Timmy stands out as the most dependable developer I’ve worked with over many years. Tech-savvy and always in tune with the latest trends, he consistently delivers outstanding results while going above and beyond to surpass expectations.",
+                author: "Igo Isaiah Ogbu",
+                position: "CEO, Virfars Solution",
+                linkedin: "https://www.linkedin.com/in/igoogbu/",
+                avatar: "/virfars.jpeg"
               },
               {
                 quote: "Professional, reliable, and incredibly skilled. Tim's work on our e-commerce platform resulted in a 300% increase in conversions.",
