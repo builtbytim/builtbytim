@@ -644,11 +644,11 @@ export default function Home() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 />
                 <Image
-                  src="https://placehold.co/400x400/1e293b/64748b?text=TIM"
+                  src="/profile.jpg"
                   alt="Professional headshot of Timileyin Pelumi, Full Stack Developer"
                   width={400}
                   height={400}
-                  className="relative z-10 w-40 h-40 sm:w-60 sm:h-60 lg:w-72 lg:h-72 rounded-full object-cover border-2 border-slate-500"
+                  className="relative z-10 w-full h-full object-cover object-top"
                   priority
                 />
               </motion.div>
@@ -780,7 +780,7 @@ export default function Home() {
             <motion.div variants={slideInLeft} className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl"></div>
               <Image
-                src="https://placehold.co/500x400/374151/9ca3af?text=Coding+Setup"
+                src="/workspace.jpg"
                 alt="Modern software development workspace featuring multiple monitors with code editors, development tools, and a clean desk setup representing Timileyin's work environment"
                 width={500}
                 height={400}
@@ -1702,10 +1702,6 @@ export default function Home() {
               </h2>
             </div>
             <p className="text-slate-300 text-base sm:text-lg">Ready to collaborate on your next project?</p>
-            <div className="flex items-center justify-center space-x-2 mt-2">
-              <Clock className="w-4 h-4 text-blue-400" />
-              <p className="text-blue-400 text-sm">I usually respond within 24 hours</p>
-            </div>
           </motion.div>
 
           <motion.div
@@ -1770,6 +1766,11 @@ export default function Home() {
                   <span>Send a Message</span>
                 </h3>
                 
+                <p className="text-slate-400 text-sm mb-6 flex items-center space-x-2">
+                  <Clock className="w-4 h-4" />
+                  <span>I usually respond within 24 hours.</span>
+                </p>
+
                 <form className="space-y-4 sm:space-y-6" role="form" aria-label="Contact form">
                   <div>
                     <label htmlFor="contact-name" className="sr-only">Your Name</label>
