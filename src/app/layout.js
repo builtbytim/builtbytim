@@ -13,6 +13,42 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+export const metadata = {
+  title: 'Timileyin Pelumi - Full Stack Developer',
+  description: 'Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain. Available for remote opportunities.',
+  metadataBase: new URL('https://builtbytim.dev'),
+  openGraph: {
+    title: 'Timileyin Pelumi - Full Stack Developer',
+    description: 'Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain. Available for remote opportunities.',
+    type: 'website',
+    url: 'https://builtbytim.dev',
+    images: [{
+      url: 'https://builtbytim.dev/banner.png',
+      alt: 'Timileyin Pelumi Portfolio Banner'
+    }],
+    siteName: 'Timileyin Pelumi'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Timileyin Pelumi - Full Stack Developer',
+    description: 'Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain.',
+    domain: 'builtbytim.dev',
+    url: 'https://builtbytim.dev',
+    images: ['https://builtbytim.dev/banner.png']
+  },
+  alternates: {
+    canonical: 'https://builtbytim.dev'
+  },
+  robots: {
+    index: true,
+    follow: true
+  },
+  icons: {
+    icon: '/web-app-manifest-192x192.png',
+    apple: '/web-app-manifest-192x192.png',
+  }
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -49,54 +85,6 @@ const jsonLd = {
     "DeFi",
     "Full Stack Development"
   ]
-};
-
-export const metadata = {
-  title: {
-    default: "Timileyin Pelumi - Full Stack Developer | Web, AI & Blockchain Expert",
-    template: "%s | Timileyin Pelumi - Full Stack Developer"
-  },
-  description: "Timileyin Pelumi is a product-minded full-stack developer from Nigeria specializing in web development, AI solutions, and blockchain applications. Expert in React, Next.js, Python, and modern tech stacks. Available for remote opportunities.",
-  metadataBase: new URL('https://builtbytim.dev'),
-  openGraph: {
-    title: "Timileyin Pelumi - Full Stack Developer | Web, AI & Blockchain Expert",
-    description: "Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain. Available for remote opportunities.",
-    type: "website",
-    url: "https://builtbytim.dev",
-    siteName: "Timileyin Pelumi - Full Stack Developer",
-    images: [{
-      url: "/banner.png",
-      width: 1200,
-      height: 630,
-      alt: "Timileyin Pelumi - Full Stack Developer Portfolio"
-    }]
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Timileyin Pelumi - Full Stack Developer | Web, AI & Blockchain Expert",
-    description: "Product-minded full-stack developer building clean, scalable solutions in web development, AI, and blockchain.",
-    domain: "builtbytim.dev",
-    url: "https://builtbytim.dev",
-    images: ["/banner.png"]
-  },
-  alternates: {
-    canonical: "https://builtbytim.dev"
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    }
-  },
-  icons: {
-    icon: "/web-app-manifest-192x192.png",
-    apple: "/web-app-manifest-192x192.png"
-  }
 };
 
 export default function RootLayout({ children }) {
