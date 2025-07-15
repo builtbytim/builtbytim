@@ -16,14 +16,14 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: 'Timileyin Pelumi - Full Stack Developer',
   description: 'Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain. Available for remote opportunities.',
-  metadataBase: new URL('https://builtbytim.dev'),
+  metadataBase: new URL('https://www.builtbytim.dev'),
   openGraph: {
     title: 'Timileyin Pelumi - Full Stack Developer',
     description: 'Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain. Available for remote opportunities.',
     type: 'website',
-    url: 'https://builtbytim.dev',
+    url: 'https://www.builtbytim.dev',
     images: [{
-      url: 'https://builtbytim.dev/banner.png',
+      url: 'https://www.builtbytim.dev/banner.png',
       alt: 'Timileyin Pelumi Portfolio Banner'
     }],
     siteName: 'Timileyin Pelumi'
@@ -32,12 +32,12 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Timileyin Pelumi - Full Stack Developer',
     description: 'Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain.',
-    domain: 'builtbytim.dev',
-    url: 'https://builtbytim.dev',
-    images: ['https://builtbytim.dev/banner.png']
+    domain: 'www.builtbytim.dev',
+    url: 'https://www.builtbytim.dev',
+    images: ['https://www.builtbytim.dev/banner.png']
   },
   alternates: {
-    canonical: 'https://builtbytim.dev'
+    canonical: 'https://www.builtbytim.dev'
   },
   robots: {
     index: true,
@@ -55,8 +55,8 @@ const jsonLd = {
   name: "Timileyin Pelumi",
   alternateName: "Tim",
   description: "Full-stack developer and product-minded engineer specializing in web development, AI, and blockchain applications",
-  url: "https://builtbytim.dev",
-  image: "https://builtbytim.dev/profile.jpg",
+  url: "https://www.builtbytim.dev",
+  image: "https://www.builtbytim.dev/profile.jpg",
   sameAs: [
     "https://github.com/builtbytim",
     "https://linkedin.com/in/builtbytim",
