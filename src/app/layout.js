@@ -162,7 +162,7 @@ export default function RootLayout({ children }) {
           Skip to main content
         </a>
         <div id="root" role="application" aria-label="Timileyin Pelumi Portfolio">
-          {children}
+        {children}
         </div>
       </body>
     </html>

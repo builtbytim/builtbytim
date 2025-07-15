@@ -33,7 +33,8 @@ import {
   Briefcase,
   Users,
   Target,
-  ArrowUpRight
+  ArrowUpRight,
+  FileText
 } from 'lucide-react';
 
 const fadeInUp = {
@@ -116,6 +117,7 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [skillsExpanded, setSkillsExpanded] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showFirstText, setShowFirstText] = useState(true);
 
   useEffect(() => {
     setMounted(true);
@@ -138,6 +140,14 @@ export default function Home() {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousemove', handleMouseMove);
     };
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowFirstText(prev => !prev);
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, []);
 
   if (!mounted) return null;
@@ -173,22 +183,23 @@ export default function Home() {
       color: "from-purple-500 to-violet-400",
       techs: [
         { name: "Solidity", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg" },
-        { name: "Ethereum", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ethereum/ethereum-original.svg" },
+        { name: "Ethereum", logo: "https://ethereum.org/assets/svgs/eth-diamond-black.svg" },
         { name: "Web3.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/web3js/web3js-original.svg" },
         { name: "MetaMask", logo: "https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" },
         { name: "Smart Contracts", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ethereum/ethereum-original.svg" }
       ]
     },
     { 
-      category: "AI/ML", 
+      category: "AI Integration", 
       icon: <Brain className="w-8 h-8" />,
       color: "from-orange-500 to-red-400",
       techs: [
-        { name: "TensorFlow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" },
-        { name: "PyTorch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" },
-        { name: "OpenAI", logo: "https://static.vecteezy.com/system/resources/previews/022/227/364/non_2x/openai-chatgpt-logo-icon-free-png.png" },
-        { name: "Pandas", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" },
-        { name: "NumPy", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" }
+        { name: "OpenAI", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/openai/openai-original.svg" },
+        { name: "Gemini", logo: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" },
+        { name: "LangChain", logo: "https://python.langchain.com/img/favicon.ico" },
+        { name: "RAG", logo: "https://raw.githubusercontent.com/valohai/ml-logos/master/vectorflow.svg" },
+        { name: "Colab", logo: "https://colab.research.google.com/img/colab_favicon_256px.png" },
+        { name: "TensorFlow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" }
       ]
     },
     { 
@@ -197,9 +208,10 @@ export default function Home() {
       color: "from-indigo-500 to-purple-400",
       techs: [
         { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
-        { name: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" },
-        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
-        { name: "Linux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+        { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+        { name: "Vercel", logo: "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png" },
+        { name: "Render", logo: "/render-logo.svg" },
+        { name: "Cursor", logo: "/cursor.webp" },
         { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" }
       ]
     }
@@ -207,36 +219,66 @@ export default function Home() {
 
   const projects = [
     {
-      title: "DeFi Trading Platform",
-      subtitle: "Decentralized Finance Revolution",
-      description: "A comprehensive DeFi platform featuring automated market making, yield farming, and cross-chain interoperability. Built with cutting-edge smart contracts and real-time market analytics.",
-      image: "https://placehold.co/600x400/6366f1/ffffff?text=DeFi+Platform",
-      tags: ["React", "Solidity", "Web3", "Python", "PostgreSQL"],
-      status: "Featured",
-      statusColor: "from-yellow-400 to-orange-500",
-      metrics: { users: "10K+", tvl: "$2.5M", transactions: "500K+" },
+      title: "ChainPal — Web3 Payment Gateway",
+      subtitle: "Lead Full Stack Developer",
+      description: "ChainPal is an AI-enabled blockchain payment gateway for businesses and freelancers.",
+      achievements: [
+        "Architected and implemented complete payment infrastructure enabling crypto-to-fiat transactions",
+        "Built merchant dashboard with payment link generation, invoice management, and automated payout processing",
+        "Developed secure user authentication and business verification system",
+        "Integrated cross-border payment processing with real-time currency conversion"
+      ],
+      image: "/chainpal-shot.png",
+      tags: ["Next.js", "Python", "Solidity", "PostgreSQL", "AWS"],
+      links: {
+        demo: "https://chainpal.org",
+        github: "https://github.com/chainpalhq",
+        case_study: null
+      },
+      status: "Live",
+      statusColor: "from-green-400 to-emerald-500",
       icon: <Shield className="w-6 h-6" />
     },
     {
-      title: "AI Content Studio",
-      subtitle: "Next-Gen Content Creation",
-      description: "Advanced AI-powered SaaS platform for automated content generation, featuring custom model training, multi-language support, and enterprise-grade API integration.",
-      image: "https://placehold.co/600x400/10b981/ffffff?text=AI+Studio",
-      tags: ["Next.js", "Python", "OpenAI", "TensorFlow", "Redis"],
-      status: "Live",
-      statusColor: "from-green-400 to-emerald-500",
-      metrics: { users: "5K+", content: "1M+", accuracy: "95%" },
+      title: "PromptSifter — Professional Prompt Discovery",
+      subtitle: "Solo Developer",
+      description: "Discover quality prompts curated by professionals across different expertises - from developers to marketers, writers to analysts.",
+      achievements: [
+        "Built complete authentication system with social logins and secure sessions",
+        "Developed automated prompt quality verification with multi-factor scoring",
+        "Implemented extensive filtering system with real-time search and categorization",
+        "Created offline-first architecture with seamless data syncing and caching"
+      ],
+      image: "/promptsifter-shot.png",
+      tags: ["Next.js", "FastAPI", "MongoDB", "Redis", "Groq AI"],
+      links: {
+        demo: "https://promptsifter.bytim.xyz",
+        github: "https://github.com/builtbytim/promptsifter",
+        case_study: null
+      },
+      status: "Open Source",
+      statusColor: "from-yellow-400 to-orange-500",
       icon: <Brain className="w-6 h-6" />
     },
     {
-      title: "Cloud-Native Architecture",
-      subtitle: "Scalable Microservices Platform",
-      description: "Enterprise-grade e-commerce backend with microservices architecture, event-driven communication, and auto-scaling capabilities handling millions of requests daily.",
-      image: "https://placehold.co/600x400/8b5cf6/ffffff?text=Cloud+Platform",
-      tags: ["Python", "Docker", "Kubernetes", "RabbitMQ", "Redis"],
-      status: "Open Source",
+      title: "Moonshill — Web3 Marketing Automation",
+      subtitle: "Full Stack Developer",
+      description: "AI-powered multi-platform shilling engine for Web3 communities. Amplify your crypto project with intelligent meme generation and strategic posting.",
+      achievements: [
+        "Built AI-powered content generation system for memes and marketing materials",
+        "Developed multi-platform automation for Twitter, Telegram, and Discord",
+        "Implemented  prompt tuning for maximum human-like post generation",
+        "Created smart engagement system with anti-bot detection mechanisms"
+      ],
+      image: "/moonshill-shot.png",
+      tags: ["Next.js", "Python", "OpenAI", "Redis", "Render"],
+      links: {
+        demo: "https://moonshill.pages.dev",
+        github: "https://github.com/nulldev0x/moonshill",
+        case_study: "https://docs.google.com/document/d/1QImjqVhBxoeutw4nH5YGWrg8ow1AD7Zd1LeelXKmAyQ/edit?usp=sharing"
+      },
+      status: "Featured",
       statusColor: "from-blue-400 to-cyan-500",
-      metrics: { requests: "10M+", uptime: "99.9%", services: "25+" },
       icon: <Server className="w-6 h-6" />
     }
   ];
@@ -358,7 +400,6 @@ export default function Home() {
               {[
                 { name: 'About', icon: <Globe className="w-4 h-4" aria-hidden="true" /> },
                 { name: 'Skills', icon: <Zap className="w-4 h-4" aria-hidden="true" /> },
-                { name: 'Education', icon: <Trophy className="w-4 h-4" aria-hidden="true" /> },
                 { name: 'Experience', icon: <Briefcase className="w-4 h-4" aria-hidden="true" /> },
                 { name: 'Projects', icon: <Rocket className="w-4 h-4" aria-hidden="true" /> },
                 { name: 'Contact', icon: <Mail className="w-4 h-4" aria-hidden="true" /> }
@@ -503,30 +544,36 @@ export default function Home() {
             <motion.h1
               id="hero-heading"
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6"
             >
-              <span className="text-white block mb-1">Hi, I&apos;m</span>
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent block mb-2">
-                Timileyin
+              <span className="text-white block text-xl sm:text-2xl lg:text-3xl xl:text-4xl mb-1">
+                Hi, I&apos;m
               </span>
-              <span className="text-white block text-lg sm:text-xl lg:text-2xl xl:text-3xl font-medium">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent block mb-2">
+                Timileyin Pelumi
+              </span>
+              <span className="text-white block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium">
                 Building the Future, One Product at a Time
               </span>
             </motion.h1>
             
             <motion.div
               variants={fadeInUp}
-              className="mb-6 max-w-2xl mx-auto lg:mx-0"
+              className="mb-8 max-w-2xl mx-auto lg:mx-0 space-y-4"
             >
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed mb-4">
-                I&apos;m a full-stack developer turning bold ideas into real, usable tools — from backend systems to sleek user experiences.
+              <p className="text-base sm:text-lg text-slate-200 leading-relaxed">
+                I&apos;m a full-stack developer turning bold ideas into real, usable tools.
               </p>
               
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed mb-4">
-                Focused on shipping clean web apps, AI-powered tools, and blockchain projects — all built from scratch.
+              <p className="text-base sm:text-lg text-slate-200 leading-relaxed">
+                From backend systems to sleek, responsive user interfaces.
               </p>
               
-              <p className="text-slate-300 text-sm sm:text-base italic">
+              <p className="text-base sm:text-lg text-slate-200 leading-relaxed">
+                Focused on shipping clean web apps, AI-powered tools, and blockchain projects.
+              </p>
+              
+              <p className="text-slate-300 text-sm sm:text-base italic mt-6">
                 Based in Lagos. Building for the world.
               </p>
             </motion.div>
@@ -543,7 +590,7 @@ export default function Home() {
                 aria-label="Navigate to featured projects section"
               >
                 <Rocket className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-                <span>View My Work</span>
+                <span>See My Work</span>
               </motion.a>
               <motion.a
                 href="#contact"
@@ -553,7 +600,7 @@ export default function Home() {
                 aria-label="Navigate to contact section"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-                <span>Get In Touch</span>
+                <span>Let&apos;s Talk</span>
               </motion.a>
             </motion.div>
           </motion.div>
@@ -741,32 +788,28 @@ export default function Home() {
               />
             </motion.div>
 
-            <motion.div variants={slideInRight} className="space-y-4 sm:space-y-6">
+            <motion.div variants={slideInRight} className="space-y-3 sm:space-y-4">
               <div className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
                 <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
                 <h2 id="about-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-                  About <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Tim</span>
+                  About <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Me</span>
                 </h2>
               </div>
               
               <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-                I&apos;m Timileyin Pelumi, a product-minded software engineer based in Nigeria with a passion for 
-                building scalable, high-performance applications. I specialize in full-stack development, 
-                artificial intelligence, and blockchain technologies, with a focus on creating solutions 
-                that drive business value and user engagement.
+              I&apos;m a full-stack software engineer based in Nigeria, passionate about building high-performance, scalable applications that create real-world impact.
               </p>
               
               <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-                With expertise spanning Python, JavaScript, and modern web frameworks, I architect and develop 
-                end-to-end solutions from database design to user interface. I have a strong foundation in 
-                computer engineering and extensive experience in building secure, maintainable systems that 
-                scale efficiently.
+              I specialize in web development, artificial intelligence, and blockchain. I turn complex ideas into clean, user-focused products. My expertise spans Python, JavaScript, and modern frameworks like FastAPI and Next.js, with a strong foundation in computer engineering and systems design.
               </p>
               
               <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-                I&apos;m actively seeking remote opportunities where I can contribute to innovative projects, 
-                collaborate with distributed teams, and continue growing as a technology leader. My approach 
-                combines technical excellence with business acumen to deliver solutions that matter.
+              From backend architecture to pixel-perfect interfaces, I build secure, maintainable solutions that scale efficiently and drive business results.
+              </p>
+
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+              I&apos;m currently open to remote opportunities where I can contribute to bold, innovative products, collaborate with world-class teams, and grow as a technical leader.
               </p>
 
               <motion.a
@@ -920,7 +963,7 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+      <section id="education" className="hidden py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -1010,7 +1053,10 @@ export default function Home() {
                 Professional <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">Experience</span>
               </h2>
             </div>
-            <p className="text-slate-300 text-base sm:text-lg">Building impactful solutions across various domains</p>
+            <p className="text-slate-300 text-base sm:text-lg">
+
+            Building scalable, high-impact systems across blockchain, SaaS, and data-driven domains.
+            </p>
           </motion.div>
 
           <div className="relative hidden lg:block">
@@ -1026,29 +1072,56 @@ export default function Home() {
             >
               {[
                 {
-                  period: "2023 - Present",
+                  period: "Jan 2025 - Present",
                   title: "Senior Full Stack Developer",
                   company: "Freelance & Remote Projects",
-                  description: "Leading development of enterprise-grade applications using modern tech stacks. Specialized in DeFi platforms, AI-powered SaaS solutions, and scalable web applications.",
-                  achievements: ["Built 3 major DeFi platforms with $5M+ TVL", "Deployed 15+ production applications", "Mentored 5+ junior developers"],
+                  description: "Building data-driven web applications with focus on blockchain and AI integration. Specialized in creating innovative solutions that combine web3 technology with practical user needs.",
+                  achievements: [
+                    "Developed Moonshill, a web3 marketing platform that secured 2nd place in the BlessNet Hackathon",
+                    "Built and launched a blockchain staking platform generating $30K in revenue",
+                    "Created PromptSifter, an AI prompt curation platform serving the growing AI community"
+                  ],
                   side: "right"
                 },
                 {
-                  period: "2022 - 2023",
-                  title: "Blockchain Developer",
-                  company: "Web3 Startup",
-                  description: "Developed smart contracts and DeFi protocols. Implemented complex tokenomics and automated market making algorithms.",
-                  achievements: ["Deployed 25+ smart contracts", "Saved $50K+ in gas optimization", "Built cross-chain bridge infrastructure"],
+                  period: "Nov 2024 - Apr 2025",
+                  title: "Full Stack Developer",
+                  company: "ChainPal",
+                  description: "Led end-to-end development of an AI-enabled blockchain payment gateway, bridging traditional banking with DeFi for businesses and freelancers.",
+                  achievements: [
+                    "Architected and implemented complete payment infrastructure enabling crypto-to-fiat transactions",
+                    "Built merchant dashboard with payment link generation, invoice management, and automated payout processing",
+                    "Developed secure user authentication and business verification system",
+                    "Integrated cross-border payment processing with real-time currency conversion"
+                  ],
                   side: "left"
                 },
                 {
-                  period: "2021 - 2022",
-                  title: "Full Stack Developer",
-                  company: "Tech Consulting",
-                  description: "Created end-to-end solutions for various clients including e-commerce platforms, management systems, and data analytics dashboards.",
-                  achievements: ["Delivered 20+ client projects", "Achieved 99.9% uptime record", "Increased client efficiency by 40%"],
+                  period: "Sep 2024 - Dec 2024",
+                  title: "Python Backend Engineer",
+                  company: "Venixs Inc",
+                  description: "Led backend development initiatives focusing on payment systems, customer support infrastructure, and performance optimization.",
+                  achievements: [
+                    "Implemented robust recurring card charging system for subscription management, significantly improving payment success rates",
+                    "Developed comprehensive ticketing system for streamlined customer issue resolution",
+                    "Optimized API performance through strategic caching and query improvements",
+                    "Refactored core backend services to improve code efficiency and reduce technical debt"
+                  ],
+                  side: "left"
+                },
+                {
+                  period: "2022 - 2023",
+                  title: "Independent Developer",
+                  company: "Network Projects",
+                  description: "Developed innovative solutions across fintech and healthcare sectors, focusing on building platforms that solve real-world problems through technology.",
+                  achievements: [
+                    "Built SafeHome, a comprehensive cooperative finance platform enabling savings and investment opportunities for young professionals",
+                    "Developed HealthPal, an AI-powered health assistance platform with personalized chatbot interactions and health metric tracking",
+                    "Delivered multiple custom solutions through network referrals, maintaining high client satisfaction and repeat business"
+                  ],
                   side: "right"
-                }
+                },
+
               ].map((exp, index) => (
                 <motion.div
                   key={index}
@@ -1171,37 +1244,42 @@ export default function Home() {
             <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
               <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-                Client <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Testimonials</span>
+                Trusted <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Voices</span>
               </h2>
             </div>
-            <p className="text-slate-300 text-base sm:text-lg">What clients say about working with me</p>
+            <p className="text-slate-300 text-base sm:text-lg">
+            Feedback from collaborators, clients, and industry peers.
+            </p>
           </motion.div>
 
           <motion.div
             variants={staggerContainer}
-            initial="hidden"
+            initial="hidden"                                                                                                                                                                                                                                                                                                                        
             whileInView="visible"
             viewport={{ once: true }}
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           >
             {[
               {
-                quote: "Timileyin delivered an exceptional DeFi platform that exceeded our expectations. His technical expertise and attention to detail are outstanding.",
-                author: "Sarah Chen",
-                position: "CTO, DeFi Startup",
-                rating: 5
+                quote: "Timmy, as I fondly call him, is what I like to describe as a realistic cracked dev. He combines the grit and resourcefulness of a true 10x engineer with an unwavering ability to deliver, no matter how complex the system. He's built intricate architectures for me in weeks — work that usually takes months — all with a sharp eye for detail and rare commitment to quality.",
+                author: "Michael Jimoh",
+                position: "Founder, ChainPal",
+                linkedin: "https://www.linkedin.com/in/michael-jimoh-hack/",
+                avatar: "/chainpal.png"
               },
               {
                 quote: "Working with Tim was a game-changer for our project. He delivered a scalable AI solution that transformed our business operations.",
                 author: "Michael Rodriguez",
                 position: "Product Manager, Tech Corp",
-                rating: 5
+                linkedin: "https://www.linkedin.com/in/michael-rodriguez",
+                avatar: "/avatar-rodriguez.png"
               },
               {
                 quote: "Professional, reliable, and incredibly skilled. Tim's work on our e-commerce platform resulted in a 300% increase in conversions.",
                 author: "Emily Johnson",
                 position: "Founder, E-commerce Brand",
-                rating: 5
+                linkedin: "https://www.linkedin.com/in/emily-johnson",
+                avatar: "/avatar-johnson.png"
               }
             ].map((testimonial, index) => (
               <motion.div
@@ -1212,31 +1290,42 @@ export default function Home() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 group-hover:border-white/20 transition-all duration-300">
-                  <div className="flex mb-3 sm:mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: i * 0.1 }}
-                      >
-                        <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
-                      </motion.div>
-                    ))}
-                  </div>
-                  
                   <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mb-3 sm:mb-4 opacity-50" />
                   
                   <p className="text-slate-300 mb-4 sm:mb-6 italic text-sm sm:text-base leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
                   
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-sm sm:text-base">{testimonial.author.charAt(0)}</span>
-                    </div>
-                    <div>
+                    {testimonial.avatar ? (
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
+                        <Image
+                          src={testimonial.avatar}
+                          alt={`${testimonial.author}'s avatar`}
+                          width={48}
+                          height={48}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-sm sm:text-base">{testimonial.author.charAt(0)}</span>
+                      </div>
+                    )}
+                    <div className="flex-1">
                       <h4 className="text-white font-semibold text-sm sm:text-base">{testimonial.author}</h4>
                       <p className="text-slate-400 text-xs sm:text-sm">{testimonial.position}</p>
                     </div>
+                    {testimonial.linkedin && (
+                      <motion.a
+                        href={testimonial.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="text-blue-400 hover:text-blue-300 transition-colors duration-200"
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </motion.a>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -1256,34 +1345,57 @@ export default function Home() {
             className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
           >
             {[
-              { number: "50+", label: "Projects Completed", icon: <Target className="w-8 h-8" /> },
-              { number: "30+", label: "Happy Clients", icon: <Users className="w-8 h-8" /> },
-              { number: "3+", label: "Years Experience", icon: <Calendar className="w-8 h-8" /> },
-              { number: "99%", label: "Client Satisfaction", icon: <Award className="w-8 h-8" /> }
+              { 
+                number: "50+", 
+                label: "Projects Shipped", 
+                description: "Real products delivered end-to-end",
+                icon: <Target className="w-8 h-8" /> 
+              },
+              { 
+                number: "30+", 
+                label: "Clients Served", 
+                description: "Across startups, teams, and solo founders",
+                icon: <Users className="w-8 h-8" /> 
+              },
+              { 
+                number: "4+", 
+                label: "Years of Experience", 
+                description: "Hands-on engineering across web, AI, and blockchain",
+                icon: <Calendar className="w-8 h-8" /> 
+              },
+              { 
+                number: "99%", 
+                label: "Client Satisfaction", 
+                description: "Repeat work and referrals are my baseline",
+                icon: <Award className="w-8 h-8" /> 
+              }
             ].map((stat, index) => (
               <motion.div
                 key={index}
                 variants={scaleIn}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="text-center group"
+                className="text-center group h-full"
               >
-                <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-slate-600/30 group-hover:border-slate-500/50 transition-all duration-300">
+                <div className="flex flex-col h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-slate-600/30 group-hover:border-slate-500/50 transition-all duration-300">
                   <motion.div
                     animate={{ rotateY: [0, 360] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                    className="text-blue-400 mb-3 sm:mb-4 flex justify-center"
+                    className="text-blue-400 mb-3 sm:mb-4 flex justify-center flex-shrink-0"
                   >
                     {stat.icon}
                   </motion.div>
-                  <motion.h3
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2"
-                  >
-                    {stat.number}
-                  </motion.h3>
-                  <p className="text-slate-300 text-xs sm:text-sm lg:text-base text-center">{stat.label}</p>
+                  <div className="flex flex-col flex-grow">
+                    <motion.h3
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2"
+                    >
+                      {stat.number}
+                    </motion.h3>
+                    <p className="text-slate-300 text-sm sm:text-base font-medium mb-2">{stat.label}</p>
+                    <p className="text-slate-400 text-xs sm:text-sm">{stat.description}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -1328,15 +1440,15 @@ export default function Home() {
                 <div className="relative bg-slate-800/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-700/50 group-hover:border-slate-600/50 transition-all duration-500">
                   <div className="flex flex-col lg:grid lg:grid-cols-2 gap-0">
                     {/* Image Section */}
-                    <div className="relative overflow-hidden lg:order-1">
+                    <div className="relative overflow-hidden lg:order-1 p-4 sm:p-6 lg:p-8">
                       <motion.img
-                        whileHover={{ scale: 1.1 }}
+                        whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.5 }}
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-48 sm:h-64 lg:h-full object-cover"
+                        className="w-full rounded-lg shadow-lg"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent"></div>
                       
                       {/* Status Badge */}
                       <div className="absolute top-3 right-3 sm:top-4 sm:right-4 lg:top-6 lg:right-6">
@@ -1349,17 +1461,7 @@ export default function Home() {
                         </motion.div>
                       </div>
 
-                      {/* Metrics */}
-                      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 lg:bottom-6 lg:left-6 lg:right-6">
-                        <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
-                          {Object.entries(project.metrics).map(([key, value]) => (
-                            <div key={key} className="text-center bg-slate-900/60 backdrop-blur-sm rounded-md sm:rounded-lg p-2 sm:p-3">
-                              <div className="text-white font-bold text-sm sm:text-base lg:text-lg">{value}</div>
-                              <div className="text-slate-300 text-xs uppercase tracking-wider">{key}</div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                      {/* Project Status Badge */}
                     </div>
 
                     {/* Content Section */}
@@ -1381,6 +1483,16 @@ export default function Home() {
                         {project.description}
                       </p>
                       
+                      <div className="space-y-2 mb-6">
+                        <div className="text-green-400 font-semibold text-sm sm:text-base mb-2">✅ Key Contributions:</div>
+                        {project.achievements.map((achievement, i) => (
+                          <div key={i} className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-green-400 rounded-full mt-2"></div>
+                            <span className="text-slate-300 text-sm">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
+                      
                       <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
                         {project.tags.map((tag) => (
                           <span
@@ -1393,22 +1505,39 @@ export default function Home() {
                       </div>
                       
                       <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 lg:space-x-4">
-                        <motion.button
+                        <motion.a
+                          href={project.links.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           whileHover={{ scale: 1.05, y: -2 }}
                           whileTap={{ scale: 0.95 }}
                           className="flex-1 flex items-center justify-center space-x-2 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg sm:rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200 text-sm sm:text-base"
                         >
                           <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                           <span>Live Demo</span>
-                        </motion.button>
-                        <motion.button
+                        </motion.a>
+                        <motion.a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           whileHover={{ scale: 1.05, y: -2 }}
                           whileTap={{ scale: 0.95 }}
                           className="flex-1 flex items-center justify-center space-x-2 py-3 sm:py-4 border border-slate-600 text-slate-300 rounded-lg sm:rounded-xl font-semibold hover:bg-slate-700/50 hover:border-slate-500 transition-all duration-200 text-sm sm:text-base"
                         >
                           <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                           <span>View Code</span>
-                        </motion.button>
+                        </motion.a>
+                        {project.links.case_study && (
+                          <motion.a
+                            href={project.links.case_study}
+                            whileHover={{ scale: 1.05, y: -2 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="flex-1 flex items-center justify-center space-x-2 py-3 sm:py-4 border border-slate-600 text-slate-300 rounded-lg sm:rounded-xl font-semibold hover:bg-slate-700/50 hover:border-slate-500 transition-all duration-200 text-sm sm:text-base"
+                          >
+                            <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
+                            <span>Case Study</span>
+                          </motion.a>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -1481,13 +1610,20 @@ export default function Home() {
             </motion.h2>
             
             <motion.p 
-              className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed h-24 sm:h-20 relative"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              I&apos;m always excited to work on innovative projects that push boundaries. 
-              Let&apos;s collaborate and create something extraordinary.
+              {showFirstText ? (
+                <span className="absolute inset-0">
+                  Let&apos;s build fast, ship smart, and solve real problems. I bring code, clarity, and execution.
+                </span>
+              ) : (
+                <span className="absolute inset-0">
+                  Need a developer who can own the build from backend to UX? I&apos;ve shipped dozens of production apps — let&apos;s add yours to the list.
+                </span>
+              )}
             </motion.p>
             
             <motion.div
@@ -1497,7 +1633,7 @@ export default function Home() {
               transition={{ delay: 0.6, duration: 0.6 }}
             >
               <motion.a
-                href="#contact"
+                href="https://calendly.com/hey-builtbytim/30min"
                 whileHover={{ 
                   scale: 1.05, 
                   boxShadow: "0 20px 40px rgba(251, 191, 36, 0.4)",
@@ -1507,7 +1643,7 @@ export default function Home() {
                 className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-slate-900 rounded-full font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                <span>Let&apos;s Talk</span>
+                <span> Book a Call</span>
               </motion.a>
               
               <motion.a
@@ -1566,6 +1702,10 @@ export default function Home() {
               </h2>
             </div>
             <p className="text-slate-300 text-base sm:text-lg">Ready to collaborate on your next project?</p>
+            <div className="flex items-center justify-center space-x-2 mt-2">
+              <Clock className="w-4 h-4 text-blue-400" />
+              <p className="text-blue-400 text-sm">I usually respond within 24 hours</p>
+            </div>
           </motion.div>
 
           <motion.div
@@ -1601,13 +1741,16 @@ export default function Home() {
 
               <div className="flex space-x-3 sm:space-x-4 pt-4 sm:pt-6">
                 {[
-                  { name: 'GitHub', icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-gray-700 hover:to-gray-900' },
-                  { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-600 hover:to-blue-800' },
-                  { name: 'Twitter', icon: <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-400 hover:to-blue-600' },
-                  { name: 'Telegram', icon: <Send className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-500 hover:to-cyan-500' }
+                  { name: 'GitHub', icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-gray-700 hover:to-gray-900', href: 'https://github.com/builtbytim' },
+                  { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-600 hover:to-blue-800', href: 'https://linkedin.com/in/builtbytim' },
+                  { name: 'Twitter', icon: <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-400 hover:to-blue-600', href: 'https://twitter.com/builtbytim' },
+                  { name: 'Telegram', icon: <Send className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-500 hover:to-cyan-500', href: 'https://t.me/builtbytim' }
                 ].map((social) => (
-                  <motion.button
+                  <motion.a
                     key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -5 }}
                     whileTap={{ scale: 0.95 }}
                     className={`w-12 h-12 sm:w-14 sm:h-14 bg-slate-700 ${social.color} text-white rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-800`}
@@ -1615,7 +1758,7 @@ export default function Home() {
                     title={`${social.name} Profile`}
                   >
                     <span aria-hidden="true">{social.icon}</span>
-                  </motion.button>
+                  </motion.a>
                 ))}
               </div>
             </motion.div>
