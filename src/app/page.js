@@ -1702,11 +1702,15 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12 sm:mb-16"
           >
-            <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
+            <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-2 sm:mb-4">
               <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
               <h2 id="contact-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
                 Let&apos;s <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Connect</span>
               </h2>
+            </div>
+            <div className="flex items-center justify-center space-x-2 mb-2">
+              <Clock className="w-4 h-4 text-blue-400" />
+              <span className="text-blue-400 text-sm sm:text-base font-medium">I usually respond within 24 hours.</span>
             </div>
             <p className="text-slate-300 text-base sm:text-lg">Ready to collaborate on your next project?</p>
           </motion.div>
@@ -1773,11 +1777,6 @@ export default function Home() {
                   <span>Send a Message</span>
                 </h3>
                 
-                <p className="text-slate-400 text-sm mb-6 flex items-center space-x-2">
-                  <Clock className="w-4 h-4" />
-                  <span>I usually respond within 24 hours.</span>
-                </p>
-
                 <form className="space-y-4 sm:space-y-6" role="form" aria-label="Contact form">
                   <div>
                     <label htmlFor="contact-name" className="sr-only">Your Name</label>
