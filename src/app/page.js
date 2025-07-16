@@ -36,6 +36,8 @@ import {
   ArrowUpRight,
   FileText
 } from 'lucide-react';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
@@ -1776,60 +1778,106 @@ export default function Home() {
                   <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
                   <span>Send a Message</span>
                 </h3>
-                
-                <form className="space-y-4 sm:space-y-6" role="form" aria-label="Contact form">
-                  <div>
-                    <label htmlFor="contact-name" className="sr-only">Your Name</label>
-                    <input
-                      id="contact-name"
-                      type="text"
-                      name="name"
-                      placeholder="Your Name"
-                      required
-                      aria-required="true"
-                      className="w-full px-3 sm:px-4 py-3 sm:py-4 bg-slate-800/60 border border-slate-600 rounded-lg sm:rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-sm sm:text-base"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="contact-email" className="sr-only">Your Email</label>
-                    <input
-                      id="contact-email"
-                      type="email"
-                      name="email"
-                      placeholder="Your Email"
-                      required
-                      aria-required="true"
-                      aria-describedby="email-help"
-                      className="w-full px-3 sm:px-4 py-3 sm:py-4 bg-slate-800/60 border border-slate-600 rounded-lg sm:rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-sm sm:text-base"
-                    />
-                    <span id="email-help" className="sr-only">Please enter a valid email address for correspondence</span>
-                  </div>
-                  <div>
-                    <label htmlFor="contact-message" className="sr-only">Your Message</label>
-                    <textarea
-                      id="contact-message"
-                      name="message"
-                      rows={4}
-                      placeholder="Your Message"
-                      required
-                      aria-required="true"
-                      aria-describedby="message-help"
-                      className="w-full px-3 sm:px-4 py-3 sm:py-4 bg-slate-800/60 border border-slate-600 rounded-lg sm:rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 resize-none text-sm sm:text-base"
-                    />
-                    <span id="message-help" className="sr-only">Describe your project or inquiry</span>
-                  </div>
-                  
-                  <motion.button
-                    type="submit"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full flex items-center justify-center space-x-2 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg sm:rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-800"
-                    aria-label="Submit contact form"
-                  >
-                    <Rocket className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-                    <span>Send Message</span>
-                  </motion.button>
-                </form>
+                <Formik
+                  initialValues={{ name: '', email: '', message: '' }}
+                  validationSchema={Yup.object({
+                    name: Yup.string()
+                      .min(2, 'Name must be at least 2 characters')
+                      .max(40, 'Name must be at most 40 characters')
+                      .required('Name is required'),
+                    email: Yup.string()
+                      .email('Invalid email address')
+                      .required('Email is required'),
+                    message: Yup.string()
+                      .min(10, 'Message must be at least 10 characters')
+                      .max(1000, 'Message must be at most 1000 characters')
+                      .required('Message is required'),
+                  })}
+                  onSubmit={(values, { setSubmitting, resetForm }) => {
+                    // TODO: handle form submission (API call, etc.)
+                    setSubmitting(false);
+                    resetForm();
+                  }}
+                >
+                  {({
+                    values,
+                    errors,
+                    touched,
+                    handleChange,
+                    handleBlur,
+                    handleSubmit,
+                    isSubmitting
+                  }) => (
+                    <form className="space-y-4 sm:space-y-6" role="form" aria-label="Contact form" onSubmit={handleSubmit} noValidate>
+                      <div>
+                        <label htmlFor="contact-name" className="sr-only">Your Name</label>
+                        <input
+                          id="contact-name"
+                          type="text"
+                          name="name"
+                          placeholder="Your Name"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          value={values.name}
+                          aria-required="true"
+                          className={`w-full px-3 sm:px-4 py-3 sm:py-4 bg-slate-800/60 border ${errors.name && touched.name ? 'border-red-500' : 'border-slate-600'} rounded-lg sm:rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-sm sm:text-base`}
+                        />
+                        {errors.name && touched.name && (
+                          <div className="text-red-500 text-xs mt-1">{errors.name}</div>
+                        )}
+                      </div>
+                      <div>
+                        <label htmlFor="contact-email" className="sr-only">Your Email</label>
+                        <input
+                          id="contact-email"
+                          type="email"
+                          name="email"
+                          placeholder="Your Email"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          value={values.email}
+                          aria-required="true"
+                          aria-describedby="email-help"
+                          className={`w-full px-3 sm:px-4 py-3 sm:py-4 bg-slate-800/60 border ${errors.email && touched.email ? 'border-red-500' : 'border-slate-600'} rounded-lg sm:rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-sm sm:text-base`}
+                        />
+                        <span id="email-help" className="sr-only">Please enter a valid email address for correspondence</span>
+                        {errors.email && touched.email && (
+                          <div className="text-red-500 text-xs mt-1">{errors.email}</div>
+                        )}
+                      </div>
+                      <div>
+                        <label htmlFor="contact-message" className="sr-only">Your Message</label>
+                        <textarea
+                          id="contact-message"
+                          name="message"
+                          rows={4}
+                          placeholder="Your Message"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          value={values.message}
+                          aria-required="true"
+                          aria-describedby="message-help"
+                          className={`w-full px-3 sm:px-4 py-3 sm:py-4 bg-slate-800/60 border ${errors.message && touched.message ? 'border-red-500' : 'border-slate-600'} rounded-lg sm:rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 resize-none text-sm sm:text-base`}
+                        />
+                        <span id="message-help" className="sr-only">Describe your project or inquiry</span>
+                        {errors.message && touched.message && (
+                          <div className="text-red-500 text-xs mt-1">{errors.message}</div>
+                        )}
+                      </div>
+                      <motion.button
+                        type="submit"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        disabled={isSubmitting}
+                        className="w-full flex items-center justify-center space-x-2 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg sm:rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-800 disabled:opacity-60 disabled:cursor-not-allowed"
+                        aria-label="Submit contact form"
+                      >
+                        <Rocket className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+                        <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                      </motion.button>
+                    </form>
+                  )}
+                </Formik>
               </div>
             </motion.div>
           </motion.div>
