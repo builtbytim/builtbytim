@@ -514,7 +514,7 @@ export default function Home() {
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent block mb-2">
                 Timileyin Pelumi
               </span>
-              <span className="text-white block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium">
+              <span className="text-slate-300 block text-base sm:text-lg md:text-xl lg:text-2xl">
                 Building the Future, One Product at a Time
               </span>
             </motion.h1>
@@ -1136,28 +1136,60 @@ export default function Home() {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              {[
+              {
+              
+              [
                 {
-                  period: "2023 - Present",
+                  period: "Jan 2025 - Present",
                   title: "Senior Full Stack Developer",
                   company: "Freelance & Remote Projects",
-                  description: "Leading development of enterprise-grade applications using modern tech stacks. Specialized in DeFi platforms, AI-powered SaaS solutions, and scalable web applications.",
-                  achievements: ["Built 3 major DeFi platforms with $5M+ TVL", "Deployed 15+ production applications", "Mentored 5+ junior developers"]
+                  description: "Building data-driven web applications with focus on blockchain and AI integration. Specialized in creating innovative solutions that combine web3 technology with practical user needs.",
+                  achievements: [
+                    "Developed Moonshill, a web3 marketing platform that secured 2nd place in the BlessNet Hackathon",
+                    "Built and launched a blockchain staking platform generating $30K in revenue",
+                    "Created PromptSifter, an AI prompt curation platform serving the growing AI community"
+                  ],
+                  side: "right"
+                },
+                {
+                  period: "Nov 2024 - Apr 2025",
+                  title: "Full Stack Developer",
+                  company: "ChainPal",
+                  description: "Led end-to-end development of an AI-enabled blockchain payment gateway, bridging traditional banking with DeFi for businesses and freelancers.",
+                  achievements: [
+                    "Architected and implemented complete payment infrastructure enabling crypto-to-fiat transactions",
+                    "Built merchant dashboard with payment link generation, invoice management, and automated payout processing",
+                    "Developed secure user authentication and business verification system",
+                    "Integrated cross-border payment processing with real-time currency conversion"
+                  ],
+                  side: "left"
+                },
+                {
+                  period: "Sep 2024 - Dec 2024",
+                  title: "Python Backend Engineer",
+                  company: "Venixs Inc",
+                  description: "Led backend development initiatives focusing on payment systems, customer support infrastructure, and performance optimization.",
+                  achievements: [
+                    "Implemented robust recurring card charging system for subscription management, significantly improving payment success rates",
+                    "Developed comprehensive ticketing system for streamlined customer issue resolution",
+                    "Optimized API performance through strategic caching and query improvements",
+                    "Refactored core backend services to improve code efficiency and reduce technical debt"
+                  ],
+                  side: "left"
                 },
                 {
                   period: "2022 - 2023",
-                  title: "Blockchain Developer",
-                  company: "Web3 Startup",
-                  description: "Developed smart contracts and DeFi protocols. Implemented complex tokenomics and automated market making algorithms.",
-                  achievements: ["Deployed 25+ smart contracts", "Saved $50K+ in gas optimization", "Built cross-chain bridge infrastructure"]
+                  title: "Independent Developer",
+                  company: "Network Projects",
+                  description: "Developed innovative solutions across fintech and healthcare sectors, focusing on building platforms that solve real-world problems through technology.",
+                  achievements: [
+                    "Built SafeHome, a comprehensive cooperative finance platform enabling savings and investment opportunities for young professionals",
+                    "Developed HealthPal, an AI-powered health assistance platform with personalized chatbot interactions and health metric tracking",
+                    "Delivered multiple custom solutions through network referrals, maintaining high client satisfaction and repeat business"
+                  ],
+                  side: "right"
                 },
-                {
-                  period: "2021 - 2022",
-                  title: "Full Stack Developer",
-                  company: "Tech Consulting",
-                  description: "Created end-to-end solutions for various clients including e-commerce platforms, management systems, and data analytics dashboards.",
-                  achievements: ["Delivered 20+ client projects", "Achieved 99.9% uptime record", "Increased client efficiency by 40%"]
-                }
+
               ].map((exp, index) => (
                 <motion.div
                   key={index}
@@ -1230,18 +1262,18 @@ export default function Home() {
                 avatar: "/chainpal.png"
               },
               {
-                quote: "Timmy stands out as the most dependable developer I’ve worked with over many years. Tech-savvy and always in tune with the latest trends, he consistently delivers outstanding results while going above and beyond to surpass expectations.",
+                quote: "Timmy stands out as the most dependable developer I've worked with over many years. Tech-savvy and always in tune with the latest trends, he consistently delivers outstanding results while going above and beyond to surpass expectations.",
                 author: "Igo Isaiah Ogbu",
                 position: "CEO, Virfars Solution",
                 linkedin: "https://www.linkedin.com/in/igoogbu/",
                 avatar: "/virfars.jpeg"
               },
               {
-                quote: "Professional, reliable, and incredibly skilled. Tim's work on our e-commerce platform resulted in a 300% increase in conversions.",
-                author: "Emily Johnson",
-                position: "Founder, E-commerce Brand",
-                linkedin: "https://www.linkedin.com/in/emily-johnson",
-                avatar: "/avatar-johnson.png"
+                quote: "Working with Timmy was an incredible experience. As a well-rounded full-stack developer, he brings a wealth of expertise to the table. He's also a pleasant person to work with.",
+                author: "Quwam Ogunlaja",
+                position: "Software Engineer",
+                github: "http://github.com/qwmhq",
+                
               }
             ].map((testimonial, index) => (
               <motion.div
@@ -1286,6 +1318,19 @@ export default function Home() {
                         className="text-blue-400 hover:text-blue-300 transition-colors duration-200"
                       >
                         <Linkedin className="w-5 h-5" />
+                      </motion.a>
+                    )}
+
+                    {testimonial.github && (
+                      <motion.a
+                        href={testimonial.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="text-white hover:text-blue-300 transition-colors duration-200"
+                      >
+                        <Github className="w-5 h-5" />
                       </motion.a>
                     )}
                   </div>
@@ -1803,7 +1848,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-slate-400 flex items-center justify-center lg:justify-start space-x-1 sm:space-x-2 text-xs sm:text-sm"
             >
-              <Code2 className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Code2 className="w-3 h-3 sm:w-4 sm:h-4 hidden md:inline-block self-center" />
               <span>© {new Date().getFullYear()} Timileyin Pelumi. Built with Next.js, Tailwind CSS, and Framer Motion.</span>
             </motion.p>
             
