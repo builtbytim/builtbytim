@@ -1276,6 +1276,13 @@ export default function Home() {
                 position: "Software Engineer",
                 github: "http://github.com/qwmhq",
                 
+              },
+
+              {
+                quote : "Timmy is a brilliant dev! I’m always impressed by his dedication and his ability to tackle complex challenges in short periods of time. He is a real asset to any team ",
+                author : "Adewale Fatoki",
+                position : "Software Engineer",
+                linkedin : "https://linkedin.com/in/adewaleftk",
               }
             ].map((testimonial, index) => (
               <motion.div
