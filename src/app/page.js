@@ -34,7 +34,9 @@ import {
   Users,
   Target,
   ArrowUpRight,
-  FileText
+  FileText,
+  CheckCircle,
+  X
 } from 'lucide-react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -120,6 +122,8 @@ export default function Home() {
   const [skillsExpanded, setSkillsExpanded] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showFirstText, setShowFirstText] = useState(true);
+  const [showSuccessCard, setShowSuccessCard] = useState(false);
+  const [formError, setFormError] = useState('');
 
   useEffect(() => {
     setMounted(true);
@@ -1800,10 +1804,37 @@ export default function Home() {
                       .max(1000, 'Message must be at most 1000 characters')
                       .required('Message is required'),
                   })}
-                  onSubmit={(values, { setSubmitting, resetForm }) => {
-                    // TODO: handle form submission (API call, etc.)
-                    setSubmitting(false);
-                    resetForm();
+                  onSubmit={async (values, { setSubmitting, resetForm }) => {
+                    try {
+                      setFormError('');
+                      const response = await fetch('https://promptsifter.onrender.com/users/portfolio/contact', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                          name: values.name,
+                          email: values.email,
+                          message: values.message
+                        }),
+                      });
+
+                      if (response.ok) {
+                        setShowSuccessCard(true);
+                        resetForm();
+                        // Hide success card after 5 seconds
+                        setTimeout(() => {
+                          setShowSuccessCard(false);
+                        }, 5000);
+                      } else {
+                        const errorData = await response.json();
+                        setFormError(errorData.message || 'Failed to send message. Please try again.');
+                      }
+                    } catch (error) {
+                      setFormError('Network error. Please check your connection and try again.');
+                    } finally {
+                      setSubmitting(false);
+                    }
                   }}
                 >
                   {({
@@ -1885,6 +1916,60 @@ export default function Home() {
                     </form>
                   )}
                 </Formik>
+
+                {/* Error Message */}
+                {formError && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="mt-4 p-3 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center space-x-2"
+                  >
+                    <X className="w-4 h-4 text-red-400" />
+                    <span className="text-red-400 text-sm">{formError}</span>
+                  </motion.div>
+                )}
+
+                {/* Success Card */}
+                {showSuccessCard && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+                    onClick={() => setShowSuccessCard(false)}
+                  >
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="bg-slate-800 border border-slate-600 rounded-xl p-6 sm:p-8 max-w-md w-full mx-4"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <div className="text-center space-y-4">
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                          className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto"
+                        >
+                          <CheckCircle className="w-8 h-8 text-green-400" />
+                        </motion.div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
+                          <p className="text-slate-300 text-sm">Thank you for reaching out. I&apos;ll get back to you within 24 hours.</p>
+                        </div>
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={() => setShowSuccessCard(false)}
+                          className="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium transition-all duration-200"
+                        >
+                          Close
+                        </motion.button>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
           </motion.div>
