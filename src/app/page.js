@@ -1653,7 +1653,7 @@ export default function Home() {
               transition={{ delay: 0.6, duration: 0.6 }}
             >
               <motion.a
-                href="https://calendly.com/hey-builtbytim/30min"
+                href="https://calendly.com/hey-builtbytim/15min"
                 whileHover={{ 
                   scale: 1.05, 
                   boxShadow: "0 20px 40px rgba(251, 191, 36, 0.4)",
@@ -1825,7 +1825,7 @@ export default function Home() {
                         // Hide success card after 5 seconds
                         setTimeout(() => {
                           setShowSuccessCard(false);
-                        }, 5000);
+                        }, 10000);
                       } else {
                         const errorData = await response.json();
                         setFormError(errorData.message || 'Failed to send message. Please try again.');
