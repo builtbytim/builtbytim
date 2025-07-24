@@ -57,13 +57,11 @@ I'm a product-minded software engineer specializing in **full-stack development*
 
 ## 🚀 Latest Project
 
-### 🛡️ ChainPal — Web3 Payment Gateway
-**Tech**: Next.js, Python, Solidity, PostgreSQL, AWS  
-**Impact**: Enabled crypto-to-fiat transactions for businesses and freelancers  
-- Architected and implemented payment infrastructure
-- Built merchant dashboard and automated payout processing
-- Developed secure authentication and business verification
-- Integrated real-time currency conversion
+### ✨ [PromptSifter — Professional Prompt Discovery](https://promptsifter.bytim.xyz)
+**Tech**: Next.js, FastAPI, MongoDB, Redis, Groq AI  
+**Impact**: Curated prompt discovery for professionals across domains  
+- Built authentication with social logins and secure sessions
+- Automated prompt quality verification and scoring
 
 ---
 
@@ -84,58 +82,23 @@ I'm a product-minded software engineer specializing in **full-stack development*
 
 ---
 
-## 🌟 What Sets Me Apart
-
-```python
-class TimileyinPelumi:
-    def __init__(self):
-        self.focus = "Building for the world"
-        self.approach = "Product-minded engineering"
-        
-    def build_products(self):
-        return {
-            "philosophy": "Ship fast, build systems that don't break",
-            "style": "Clean, self-contained, composable",
-            "goal": "Turn portfolio into sustainable leverage"
-        }
-    
-    def current_status(self):
-        return "Available for remote opportunities 🌍"
-```
-
----
-
 ## 📈 Professional Experience
 
 **Senior Full Stack Developer** *(Jan 2025 - Present)*  
-*Freelance & Remote Projects*
-- Building data-driven web applications with focus on blockchain and AI integration. Specialized in creating innovative solutions that combine web3 technology with practical user needs.
-- Developed Moonshill, a web3 marketing platform that secured 2nd place in the BlessNet Hackathon
-- Built and launched a blockchain staking platform generating $30K in revenue
-- Created PromptSifter, an AI prompt curation platform serving the growing AI community
+*Freelance & Remote Projects*  
+Building data-driven web applications with blockchain and AI integration.
 
 **Full Stack Developer** *(Nov 2024 - Apr 2025)*  
-*ChainPal*
-- Led end-to-end development of an AI-enabled blockchain payment gateway, bridging traditional banking with DeFi for businesses and freelancers.
-- Architected and implemented complete payment infrastructure enabling crypto-to-fiat transactions
-- Built merchant dashboard with payment link generation, invoice management, and automated payout processing
-- Developed secure user authentication and business verification system
-- Integrated cross-border payment processing with real-time currency conversion
+*ChainPal*  
+Led end-to-end development of an AI-enabled blockchain payment gateway.
 
 **Python Backend Engineer** *(Sep 2024 - Dec 2024)*  
-*Venixs Inc*
-- Led backend development initiatives focusing on payment systems, customer support infrastructure, and performance optimization.
-- Implemented robust recurring card charging system for subscription management, significantly improving payment success rates
-- Developed comprehensive ticketing system for streamlined customer issue resolution
-- Optimized API performance through strategic caching and query improvements
-- Refactored core backend services to improve code efficiency and reduce technical debt
+*Venixs Inc*  
+Led backend development for payment and support systems.
 
 **Independent Developer** *(2022 - 2023)*  
-*Network Projects*
-- Developed innovative solutions across fintech and healthcare sectors, focusing on building platforms that solve real-world problems through technology.
-- Built SafeHome, a comprehensive cooperative finance platform enabling savings and investment opportunities for young professionals
-- Developed HealthPal, an AI-powered health assistance platform with personalized chatbot interactions and health metric tracking
-- Delivered multiple custom solutions through network referrals, maintaining high client satisfaction and repeat business
+*Network Projects*  
+Developed fintech and healthcare solutions for real-world impact.
 
 ---
 
