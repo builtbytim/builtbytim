@@ -2,7 +2,7 @@
 
 ## 🚀 Full-Stack Developer | Building the Future, One Product at a Time
 
-I'm a product-minded software engineer based in Lagos, Nigeria, specializing in **full-stack development**, **AI/ML**, and **blockchain technologies**. I turn bold ideas into real, usable tools — from backend systems to sleek user experiences.
+I'm a product-minded software engineer specializing in **full-stack development**, **AI/ML**, and **blockchain technologies**. I turn bold ideas into real, usable tools — from backend systems to sleek user experiences.
 
 ### 🌐 **[Visit My Portfolio →](https://builtbytim.dev)**
 
@@ -110,7 +110,6 @@ I'm a product-minded software engineer based in Lagos, Nigeria, specializing in 
 ```python
 class TimileyinPelumi:
     def __init__(self):
-        self.location = "Lagos, Nigeria"
         self.focus = "Building for the world"
         self.approach = "Product-minded engineering"
         
@@ -129,18 +128,35 @@ class TimileyinPelumi:
 
 ## 📈 Professional Experience
 
-**🚀 Full Stack Developer & Product Engineer** *(2021 - Present)*  
-*Solo Projects & Remote Work*
-- Built and shipped multiple web microproducts end-to-end
-- Designed and implemented authentication, backend logic, and APIs from scratch
-- Delivered clean, composable, and reusable systems
-- Deployed and maintained production-grade apps on Vercel, Render, and AWS
+**Senior Full Stack Developer** *(Jan 2025 - Present)*  
+*Freelance & Remote Projects*
+- Building data-driven web applications with focus on blockchain and AI integration. Specialized in creating innovative solutions that combine web3 technology with practical user needs.
+- Developed Moonshill, a web3 marketing platform that secured 2nd place in the BlessNet Hackathon
+- Built and launched a blockchain staking platform generating $30K in revenue
+- Created PromptSifter, an AI prompt curation platform serving the growing AI community
 
-**⛓️ Blockchain & AI Developer** *(2022 - Present)*  
-*Independent & Open Source*
-- Developed smart contracts and blockchain integrations
-- Built AI-powered tools and prompt engineering products
-- Focused on developer-friendly, maintainable architectures
+**Full Stack Developer** *(Nov 2024 - Apr 2025)*  
+*ChainPal*
+- Led end-to-end development of an AI-enabled blockchain payment gateway, bridging traditional banking with DeFi for businesses and freelancers.
+- Architected and implemented complete payment infrastructure enabling crypto-to-fiat transactions
+- Built merchant dashboard with payment link generation, invoice management, and automated payout processing
+- Developed secure user authentication and business verification system
+- Integrated cross-border payment processing with real-time currency conversion
+
+**Python Backend Engineer** *(Sep 2024 - Dec 2024)*  
+*Venixs Inc*
+- Led backend development initiatives focusing on payment systems, customer support infrastructure, and performance optimization.
+- Implemented robust recurring card charging system for subscription management, significantly improving payment success rates
+- Developed comprehensive ticketing system for streamlined customer issue resolution
+- Optimized API performance through strategic caching and query improvements
+- Refactored core backend services to improve code efficiency and reduce technical debt
+
+**Independent Developer** *(2022 - 2023)*  
+*Network Projects*
+- Developed innovative solutions across fintech and healthcare sectors, focusing on building platforms that solve real-world problems through technology.
+- Built SafeHome, a comprehensive cooperative finance platform enabling savings and investment opportunities for young professionals
+- Developed HealthPal, an AI-powered health assistance platform with personalized chatbot interactions and health metric tracking
+- Delivered multiple custom solutions through network referrals, maintaining high client satisfaction and repeat business
 
 ---
 
