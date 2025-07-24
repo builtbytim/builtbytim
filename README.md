@@ -38,12 +38,18 @@ I'm a product-minded software engineer based in Lagos, Nigeria, specializing in 
 
 ### AI/ML
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-000000?style=for-the-badge&logo=langchain&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![RAG](https://img.shields.io/badge/RAG-FFB300?style=for-the-badge)
+![Colab](https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)
 
 ### DevOps & Tools
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
+![Cursor](https://img.shields.io/badge/Cursor-6C47FF?style=for-the-badge)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
@@ -51,26 +57,29 @@ I'm a product-minded software engineer based in Lagos, Nigeria, specializing in 
 
 ## 🏆 Featured Projects
 
-### 🔗 DeFi Trading Platform
-**Tech**: React, Solidity, Web3.js, Node.js  
-**Impact**: $5M+ Total Value Locked (TVL)  
-- Built automated market making algorithms
-- Implemented cross-chain bridge functionality
-- Optimized gas costs by 40%
+### 🛡️ ChainPal — Web3 Payment Gateway
+**Tech**: Next.js, Python, Solidity, PostgreSQL, AWS  
+**Impact**: Enabled crypto-to-fiat transactions for businesses and freelancers  
+- Architected and implemented payment infrastructure
+- Built merchant dashboard and automated payout processing
+- Developed secure authentication and business verification
+- Integrated real-time currency conversion
 
-### 🤖 AI-Powered SaaS Dashboard
-**Tech**: Next.js, Python, TensorFlow, PostgreSQL  
-**Impact**: 10K+ active users  
-- Real-time data analytics and visualization
-- Machine learning prediction models
-- Scalable microservices architecture
+### ✨ PromptSifter — Professional Prompt Discovery
+**Tech**: Next.js, FastAPI, MongoDB, Redis, Groq AI  
+**Impact**: Curated prompt discovery for professionals across domains  
+- Built authentication with social logins and secure sessions
+- Automated prompt quality verification and scoring
+- Implemented real-time search and categorization
+- Created offline-first architecture with data syncing
 
-### 📱 E-commerce Management System
-**Tech**: React, FastAPI, MongoDB, Docker  
-**Impact**: 99.9% uptime, 40% efficiency increase  
-- Inventory management automation
-- Payment gateway integration
-- Advanced analytics dashboard
+### 🚀 Moonshill — Web3 Marketing Automation
+**Tech**: Next.js, Python, OpenAI, Redis, Render  
+**Impact**: AI-powered multi-platform shilling engine for Web3 communities  
+- Built AI-powered content generation for memes and marketing
+- Developed automation for Twitter, Telegram, and Discord
+- Implemented prompt tuning and anti-bot detection
+- Created smart engagement system
 
 ---
 
@@ -90,7 +99,7 @@ I'm a product-minded software engineer based in Lagos, Nigeria, specializing in 
 ## 🎓 Education & Certifications
 
 **Bachelor of Engineering - Computer Engineering**  
-*Comprehensive study of computer systems, software engineering, and digital systems design*
+*Comprehensive study of computer hardware systems, software engineering, and digital systems design*
 
 **Key Areas**: Algorithms, Data Structures, Computer Architecture, Software Development Methodologies
 
@@ -120,26 +129,18 @@ class TimileyinPelumi:
 
 ## 📈 Professional Experience
 
-**🚀 Senior Full Stack Developer** *(2023 - Present)*  
-*Freelance & Remote Projects*
-- Led development of enterprise-grade applications
-- Built 3 major DeFi platforms with $5M+ TVL
-- Deployed 15+ production applications
-- Mentored 5+ junior developers
+**🚀 Full Stack Developer & Product Engineer** *(2021 - Present)*  
+*Solo Projects & Remote Work*
+- Built and shipped multiple web microproducts end-to-end
+- Designed and implemented authentication, backend logic, and APIs from scratch
+- Delivered clean, composable, and reusable systems
+- Deployed and maintained production-grade apps on Vercel, Render, and AWS
 
-**⛓️ Blockchain Developer** *(2022 - 2023)*  
-*Web3 Startup*
-- Developed smart contracts and DeFi protocols
-- Deployed 25+ smart contracts
-- Saved $50K+ in gas optimization
-- Built cross-chain bridge infrastructure
-
-**💻 Full Stack Developer** *(2021 - 2022)*  
-*Tech Consulting*
-- Created end-to-end solutions for various clients
-- Delivered 20+ client projects
-- Achieved 99.9% uptime record
-- Increased client efficiency by 40%
+**⛓️ Blockchain & AI Developer** *(2022 - Present)*  
+*Independent & Open Source*
+- Developed smart contracts and blockchain integrations
+- Built AI-powered tools and prompt engineering products
+- Focused on developer-friendly, maintainable architectures
 
 ---
 
