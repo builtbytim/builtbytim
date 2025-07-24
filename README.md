@@ -6,8 +6,6 @@
 
 I'm a product-minded software engineer specializing in **full-stack development**, **AI/ML**, and **blockchain technologies**. I turn bold ideas into real, usable tools — from backend systems to sleek user experiences.
 
-### 🌐 **[Visit My Portfolio →](https://builtbytim.dev)**
-
 ---
 
 ## 🎯 What I Do
@@ -57,7 +55,7 @@ I'm a product-minded software engineer specializing in **full-stack development*
 
 ---
 
-## 🏆 Featured Projects
+## 🚀 Latest Project
 
 ### 🛡️ ChainPal — Web3 Payment Gateway
 **Tech**: Next.js, Python, Solidity, PostgreSQL, AWS  
@@ -67,33 +65,12 @@ I'm a product-minded software engineer specializing in **full-stack development*
 - Developed secure authentication and business verification
 - Integrated real-time currency conversion
 
-### ✨ PromptSifter — Professional Prompt Discovery
-**Tech**: Next.js, FastAPI, MongoDB, Redis, Groq AI  
-**Impact**: Curated prompt discovery for professionals across domains  
-- Built authentication with social logins and secure sessions
-- Automated prompt quality verification and scoring
-- Implemented real-time search and categorization
-- Created offline-first architecture with data syncing
-
-### 🚀 Moonshill — Web3 Marketing Automation
-**Tech**: Next.js, Python, OpenAI, Redis, Render  
-**Impact**: AI-powered multi-platform shilling engine for Web3 communities  
-- Built AI-powered content generation for memes and marketing
-- Developed automation for Twitter, Telegram, and Discord
-- Implemented prompt tuning and anti-bot detection
-- Created smart engagement system
-
 ---
 
 ## 📊 GitHub Stats
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=builtbytim&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=builtbytim&theme=radical&hide_border=true" alt="GitHub Streak" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=builtbytim&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
 </div>
 
 ---
