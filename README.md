@@ -1,5 +1,7 @@
 # Hi there, I'm Timileyin! 👋
 
+[![Email](https://img.shields.io/badge/Email-hey@builtbytim.dev-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hey@builtbytim.dev)
+
 ## 🚀 Full-Stack Developer | Building the Future, One Product at a Time
 
 I'm a product-minded software engineer specializing in **full-stack development**, **AI/ML**, and **blockchain technologies**. I turn bold ideas into real, usable tools — from backend systems to sleek user experiences.
