@@ -99,8 +99,6 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        <script data-goatcounter="https://builtbytim.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -110,6 +108,8 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-900 text-white`}
         suppressHydrationWarning={true}
       >
+        <script data-goatcounter="https://builtbytim.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-blue-600 text-white px-4 py-2 rounded-md"
