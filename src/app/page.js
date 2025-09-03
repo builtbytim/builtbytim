@@ -1600,21 +1600,45 @@ export default function Home() {
                   </motion.div>
                 ))}
 
-                <div className="flex space-x-3 sm:space-x-4 pt-4 sm:pt-6">
+                <div className="flex space-x-4 sm:space-x-6 pt-6 sm:pt-8">
                   {[
-                    { name: 'GitHub', icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-gray-700 hover:to-gray-900', href: 'https://github.com/builtbytim' },
-                    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-600 hover:to-blue-800', href: 'https://linkedin.com/in/timileyinpelumi' },
-                    { name: 'Twitter', icon: <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-400 hover:to-blue-600', href: 'https://twitter.com/built_by_tim' },
-                    { name: 'Telegram', icon: <Send className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-500 hover:to-cyan-500', href: 'https://t.me/builtbytim' }
+                    {
+                      name: 'GitHub',
+                      icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />,
+                      color: 'bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300',
+                      textColor: 'text-gray-700',
+                      href: 'https://github.com/builtbytim'
+                    },
+                    {
+                      name: 'LinkedIn',
+                      icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />,
+                      color: 'bg-gradient-to-br from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300',
+                      textColor: 'text-blue-600',
+                      href: 'https://linkedin.com/in/timileyinpelumi'
+                    },
+                    {
+                      name: 'X',
+                      icon: <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>,
+                      color: 'bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300',
+                      textColor: 'text-gray-700',
+                      href: 'https://x.com/built_by_tim'
+                    },
+                    {
+                      name: 'Telegram',
+                      icon: <Send className="w-5 h-5 sm:w-6 sm:h-6" />,
+                      color: 'bg-gradient-to-br from-blue-100 to-cyan-100 hover:from-blue-200 hover:to-cyan-200',
+                      textColor: 'text-blue-500',
+                      href: 'https://t.me/builtbytim'
+                    }
                   ].map((social) => (
                     <motion.a
                       key={social.name}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1, y: -5 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`w-12 h-12 sm:w-14 sm:h-14 bg-slate-700 ${social.color} text-white rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-800`}
+                      whileHover={{ scale: 1.15, y: -8, rotate: 5 }}
+                      whileTap={{ scale: 0.9 }}
+                      className={`w-14 h-14 sm:w-16 sm:h-16 ${social.color} ${social.textColor} rounded-2xl sm:rounded-3xl flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/20 focus:outline-none focus:ring-4 focus:ring-blue-400/30 focus:ring-offset-2 focus:ring-offset-slate-800 transform hover:-rotate-1`}
                       aria-label={`Connect with Timileyin on ${social.name}`}
                       title={`${social.name} Profile`}
                     >
@@ -1853,5 +1877,3 @@ export default function Home() {
     </div>
   );
 }
-
-export default Page;
