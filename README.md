@@ -11,13 +11,14 @@ I'm a product-minded software engineer specializing in **full-stack development*
 ## 🎯 What I Do
 
 - 🔥 **Full-Stack Development**: Building scalable web applications with modern frameworks
-- 🤖 **AI/ML Solutions**: Creating intelligent systems that solve real-world problems  
+- 🤖 **AI/ML Solutions**: Creating intelligent systems that solve real-world problems
 - ⛓️ **Blockchain Development**: Smart contracts, DeFi protocols, and Web3 applications
 - 📱 **Product Engineering**: From concept to deployment, I build products that matter
 
 ## 💻 Tech Stack
 
 ### Frontend
+
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -25,6 +26,7 @@ I'm a product-minded software engineer specializing in **full-stack development*
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 ### Backend
+
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
@@ -32,11 +34,13 @@ I'm a product-minded software engineer specializing in **full-stack development*
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ### Blockchain
+
 ![Solidity](https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white)
 ![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=ethereum&logoColor=white)
 ![Web3.js](https://img.shields.io/badge/Web3.js-F16822?style=for-the-badge&logo=web3dotjs&logoColor=white)
 
 ### AI/ML
+
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-000000?style=for-the-badge&logo=langchain&logoColor=white)
@@ -45,6 +49,7 @@ I'm a product-minded software engineer specializing in **full-stack development*
 ![Colab](https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)
 
 ### DevOps & Tools
+
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
@@ -58,8 +63,10 @@ I'm a product-minded software engineer specializing in **full-stack development*
 ## 🚀 Latest Project
 
 ### ✨ [PromptSifter — Professional Prompt Discovery](https://promptsifter.bytim.xyz)
+
 **Tech**: Next.js, FastAPI, MongoDB, Redis, Groq AI  
-**Impact**: Curated prompt discovery for professionals across domains  
+**Impact**: Curated prompt discovery for professionals across domains
+
 - Built authentication with social logins and secure sessions
 - Automated prompt quality verification and scoring
 
@@ -76,7 +83,7 @@ I'm a product-minded software engineer specializing in **full-stack development*
 ## 🎓 Education & Certifications
 
 **Bachelor of Engineering - Computer Engineering**  
-*Comprehensive study of computer hardware systems, software engineering, and digital systems design*
+_Comprehensive study of computer hardware systems, software engineering, and digital systems design_
 
 **Key Areas**: Algorithms, Data Structures, Computer Architecture, Software Development Methodologies
 
@@ -84,20 +91,20 @@ I'm a product-minded software engineer specializing in **full-stack development*
 
 ## 📈 Professional Experience
 
-**Senior Full Stack Developer** *(Jan 2025 - Present)*  
-*Freelance & Remote Projects*  
+**Senior Full Stack Developer** _(Jan 2025 - Present)_  
+_Freelance & Remote Projects_  
 Building data-driven web applications with blockchain and AI integration.
 
-**Full Stack Developer** *(Nov 2024 - Apr 2025)*  
-*ChainPal*  
+**Full Stack Developer** _(Nov 2024 - Apr 2025)_  
+_ChainPal_  
 Led end-to-end development of an AI-enabled blockchain payment gateway.
 
-**Python Backend Engineer** *(Sep 2024 - Dec 2024)*  
-*Venixs Inc*  
+**Python Backend Engineer** _(Sep 2024 - Dec 2024)_  
+_Venixs Inc_  
 Led backend development for payment and support systems.
 
-**Independent Developer** *(2022 - 2023)*  
-*Network Projects*  
+**Independent Developer** _(2022 - 2023)_  
+_Network Projects_  
 Developed fintech and healthcare solutions for real-world impact.
 
 ---

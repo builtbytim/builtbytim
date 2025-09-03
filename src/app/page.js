@@ -1603,8 +1603,8 @@ export default function Home() {
                 <div className="flex space-x-3 sm:space-x-4 pt-4 sm:pt-6">
                   {[
                     { name: 'GitHub', icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-gray-700 hover:to-gray-900', href: 'https://github.com/builtbytim' },
-                    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-600 hover:to-blue-800', href: 'https://linkedin.com/in/builtbytim' },
-                    { name: 'Twitter', icon: <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-400 hover:to-blue-600', href: 'https://twitter.com/builtbytim' },
+                    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-600 hover:to-blue-800', href: 'https://linkedin.com/in/timileyinpelumi' },
+                    { name: 'Twitter', icon: <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-400 hover:to-blue-600', href: 'https://twitter.com/built_by_tim' },
                     { name: 'Telegram', icon: <Send className="w-5 h-5 sm:w-6 sm:h-6" />, color: 'hover:from-blue-500 hover:to-cyan-500', href: 'https://t.me/builtbytim' }
                   ].map((social) => (
                     <motion.a
