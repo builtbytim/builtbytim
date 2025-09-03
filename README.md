@@ -24,12 +24,12 @@ I take ideas from concept to deployment. I think in terms of architecture and lo
 
 ## Languages & Tools I Use
 
-**JavaScript / TypeScript** – For building rich, responsive frontends and powerful backend APIs  
-**Python** – For backend systems, AI integration, and data processing  
-**Solidity** – For smart contracts and blockchain applications  
-**Next.js** – For full-stack web applications with excellent developer experience  
-**FastAPI** – For building fast, scalable APIs  
-**PostgreSQL / MongoDB** – For data persistence and management
+- **JavaScript / TypeScript** – For building rich, responsive frontends and powerful backend APIs
+- **Python** – For backend systems, AI integration, and data processing
+- **Solidity** – For smart contracts and blockchain applications
+- **Next.js** – For full-stack web applications with excellent developer experience
+- **FastAPI** – For building fast, scalable APIs
+- **PostgreSQL / MongoDB** – For data persistence and management
 
 ## Latest Project
 
