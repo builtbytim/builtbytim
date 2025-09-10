@@ -14,12 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'Timileyin Pelumi - Full Stack Developer',
-  description: 'Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain. Available for remote opportunities.',
+  title: 'Timileyin Pelumi - Software Engineer',
+  description: 'Software engineer and product-minded developer specializing in web, AI, and blockchain applications. Available for remote opportunities.',
   metadataBase: new URL('https://www.builtbytim.dev'),
   openGraph: {
-    title: 'Timileyin Pelumi - Full Stack Developer',
-    description: 'Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain. Available for remote opportunities.',
+    title: 'Timileyin Pelumi - Software Engineer',
+    description: 'Software engineer and product-minded developer specializing in web, AI, and blockchain applications. Available for remote opportunities.',
     type: 'website',
     url: 'https://www.builtbytim.dev',
     images: [{
@@ -30,8 +30,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Timileyin Pelumi - Full Stack Developer',
-    description: 'Product-minded full-stack developer from Nigeria building clean, scalable solutions in web development, AI, and blockchain.',
+    title: 'Timileyin Pelumi - Software Engineer',
+    description: 'Software engineer and product-minded developer specializing in web, AI, and blockchain applications. Available for remote opportunities.',
     domain: 'www.builtbytim.dev',
     url: 'https://www.builtbytim.dev',
     images: ['https://www.builtbytim.dev/banner.png']
@@ -54,7 +54,7 @@ const jsonLd = {
   "@type": "Person",
   name: "Timileyin Pelumi",
   alternateName: "Tim",
-  description: "Full-stack developer and product-minded engineer specializing in web development, AI, and blockchain applications",
+  description: "Software engineer and product-minded developer specializing in web, AI, and blockchain applications",
   url: "https://www.builtbytim.dev",
   image: "https://www.builtbytim.dev/profile.jpg",
   sameAs: [
@@ -63,15 +63,12 @@ const jsonLd = {
     "https://twitter.com/builtbytim",
     "https://t.me/builtbytim"
   ],
-  jobTitle: "Full Stack Developer",
+  jobTitle: "Software Engineer",
   worksFor: {
     "@type": "Organization",
     name: "Freelance"
   },
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "Nigeria"
-  },
+
   email: "hey@builtbytim.dev",
   knowsAbout: [
     "Web Development",

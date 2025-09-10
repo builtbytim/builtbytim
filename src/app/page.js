@@ -629,7 +629,7 @@ export default function Home() {
                       Timileyin Pelumi
                     </h1>
                     <p className="text-slate-300 text-sm sm:text-base">
-                      Full-Stack Developer
+                      Full‑stack developer focused on clean, efficient systems
                     </p>
                     <div className="flex items-center justify-center lg:justify-start space-x-2 text-xs text-slate-400">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
@@ -669,13 +669,13 @@ export default function Home() {
                   className="space-y-4"
                 >
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                    Building the Future,
+                    I build
                     <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                      One Product at a Time
+                      clean, efficient products that work
                     </span>
                   </h2>
                   <p className="text-slate-300 text-lg sm:text-xl max-w-2xl">
-                    Full-stack developer passionate about building products that make a difference
+                    I&apos;m a product‑minded full‑stack developer. I ship clean, reliable web apps; and use AI and blockchain where they add real value.
                   </p>
                 </motion.div>
 
@@ -691,10 +691,10 @@ export default function Home() {
                       <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                         <Target className="w-4 h-4 text-white" />
                       </div>
-                      <h3 className="text-white font-semibold text-sm sm:text-base">My Approach</h3>
+                      <h3 className="text-white font-semibold text-sm sm:text-base">How I Work</h3>
                     </div>
                     <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                      You have an idea worth building. My role is to turn that vision into secure, scalable, and user-friendly software.
+                      I take ideas from concept to deployment. I think in systems, ship fast, and build things that don&apos;t break.
                     </p>
                   </div>
 
@@ -703,10 +703,10 @@ export default function Home() {
                       <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
                         <Code2 className="w-4 h-4 text-white" />
                       </div>
-                      <h3 className="text-white font-semibold text-sm sm:text-base">Technical Expertise</h3>
+                      <h3 className="text-white font-semibold text-sm sm:text-base">What I Do</h3>
                     </div>
                     <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                      I work across web development, AI, and blockchain, transforming complex requirements into clean, usable applications.
+                      Full‑stack web development with AI and blockchain where they add real value. Tools follow outcomes, not hype.
                     </p>
                   </div>
 
@@ -715,10 +715,10 @@ export default function Home() {
                       <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
                         <Rocket className="w-4 h-4 text-white" />
                       </div>
-                      <h3 className="text-white font-semibold text-sm sm:text-base">What I Deliver</h3>
+                      <h3 className="text-white font-semibold text-sm sm:text-base">What You Get</h3>
                     </div>
                     <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                      At the end of the day, I&apos;m not just writing code, I&apos;m helping you solve problems, ship features, and grow your business.
+                      Clean code, clear communication, and products shipped. End‑to‑end.
                     </p>
                   </div>
                 </motion.div>
@@ -1584,8 +1584,8 @@ export default function Home() {
 
                 {[
                   { label: "Email", value: "hey@builtbytim.dev", icon: <Mail className="w-5 h-5" /> },
-                  { label: "Location", value: "Lagos, Nigeria", icon: <MapPin className="w-5 h-5" /> },
-                  { label: "Availability", value: "Open to remote opportunities", icon: <Clock className="w-5 h-5" /> }
+                  { label: "Location", value: "Remote (UTC+1)", icon: <MapPin className="w-5 h-5" /> },
+                  { label: "Availability", value: "Open to opportunities worldwide", icon: <Clock className="w-5 h-5" /> }
                 ].map((contact) => (
                   <motion.div
                     key={contact.label}
