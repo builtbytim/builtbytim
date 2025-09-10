@@ -656,6 +656,48 @@ export default function Home() {
                       Get in Touch
                     </motion.a>
                   </div>
+
+                  {/* Social Icons (brought up from Ready to Connect section) */}
+                  <div className="flex space-x-6 sm:space-x-6 pt-2 sm:pt-4 justify-start lg:justify-start">
+                    {[
+                      {
+                        name: 'GitHub',
+                        icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />,
+                        color: 'bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300',
+                        textColor: 'text-gray-700',
+                        href: 'https://github.com/builtbytim'
+                      },
+                      {
+                        name: 'LinkedIn',
+                        icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />,
+                        color: 'bg-gradient-to-br from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300',
+                        textColor: 'text-blue-600',
+                        href: 'https://linkedin.com/in/timileyinpelumi'
+                      },
+                      {
+                        name: 'X',
+                        icon: <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>,
+                        color: 'bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300',
+                        textColor: 'text-gray-700',
+                        href: 'https://x.com/built_by_tim'
+                      },
+
+                    ].map((social) => (
+                      <motion.a
+                        key={social.name}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.12, y: -6, rotate: 3 }}
+                        whileTap={{ scale: 0.92 }}
+                        className={`w-10 h-10 sm:w-12 sm:h-12 ${social.color} ${social.textColor} rounded-2xl sm:rounded-3xl flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/20 focus:outline-none focus:ring-4 focus:ring-blue-400/30 focus:ring-offset-2 focus:ring-offset-slate-800`}
+                        aria-label={`Connect with Timileyin on ${social.name}`}
+                        title={`${social.name} Profile`}
+                      >
+                        <span aria-hidden="true">{social.icon}</span>
+                      </motion.a>
+                    ))}
+                  </div>
                 </motion.div>
               </div>
 
@@ -731,7 +773,7 @@ export default function Home() {
                   className="flex justify-center lg:justify-start"
                 >
                   <motion.a
-                    href="/resume-timileyin-pelumi.pdf"
+                    href="/TIMILEYIN-PELUMI-RESUME.pdf"
                     download="Timileyin-Pelumi-Resume.pdf"
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
@@ -1518,7 +1560,7 @@ export default function Home() {
                 </motion.a>
 
                 <motion.a
-                  href="/resume-timileyin-pelumi.pdf"
+                  href="/TIMILEYIN-PELUMI-RESUME.pdf"
                   download="Timileyin-Pelumi-Resume.pdf"
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
