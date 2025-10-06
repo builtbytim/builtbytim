@@ -23,7 +23,7 @@ export const metadata = {
     type: 'website',
     url: 'https://www.builtbytim.dev',
     images: [{
-      url: 'https://www.builtbytim.dev/banner.svg',
+      url: 'https://www.builtbytim.dev/banner.png',
       alt: 'Timileyin Pelumi Portfolio Banner'
     }],
     siteName: 'Timileyin Pelumi'
@@ -34,7 +34,7 @@ export const metadata = {
     description: 'Software engineer and product-minded developer specializing in web, AI, and blockchain applications. Available for remote opportunities.',
     domain: 'www.builtbytim.dev',
     url: 'https://www.builtbytim.dev',
-    images: ['https://www.builtbytim.dev/banner.svg']
+    images: ['https://www.builtbytim.dev/banner.png']
   },
   alternates: {
     canonical: 'https://www.builtbytim.dev'
