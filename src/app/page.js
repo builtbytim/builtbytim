@@ -906,11 +906,12 @@ export default function Home() {
               </div>
 
               <motion.div
+                key={`skills-${toolsFilter}`}
                 id="skills-content"
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6"
                 style={{
                   maxHeight: skillsExpanded ? 'none' : '400px',
