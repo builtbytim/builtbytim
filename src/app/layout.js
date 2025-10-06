@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: 'Timileyin Pelumi - Software Engineer',
-  description: 'Software engineer and product-minded developer specializing in web, AI, and blockchain applications. Available for remote opportunities.',
+  description: 'Software engineer and product-minded developer specializing in web, AI, and blockchain applications. BuiltByTim is a portfolio of my projects and skills.',
   metadataBase: new URL('https://www.builtbytim.dev'),
   openGraph: {
     title: 'Timileyin Pelumi - Software Engineer',
-    description: 'Software engineer and product-minded developer specializing in web, AI, and blockchain applications. Available for remote opportunities.',
+    description: 'Software engineer and product-minded developer specializing in web, AI, and blockchain applications. BuiltByTim is a portfolio of my projects and skills.',
     type: 'website',
     url: 'https://www.builtbytim.dev',
     images: [{
@@ -31,7 +31,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Timileyin Pelumi - Software Engineer',
-    description: 'Software engineer and product-minded developer specializing in web, AI, and blockchain applications. Available for remote opportunities.',
+    description: 'Software engineer and product-minded developer specializing in web, AI, and blockchain applications. BuiltByTim is a portfolio of my projects and skills.',
     domain: 'www.builtbytim.dev',
     url: 'https://www.builtbytim.dev',
     images: ['https://www.builtbytim.dev/banner.png']
@@ -54,7 +54,7 @@ const jsonLd = {
   "@type": "Person",
   name: "Timileyin Pelumi",
   alternateName: "Tim",
-  description: "Software engineer and product-minded developer specializing in web, AI, and blockchain applications",
+  description: "Software engineer and product-minded developer specializing in web, AI, and blockchain applications. BuiltByTim is a portfolio of my projects and skills.",
   url: "https://www.builtbytim.dev",
   image: "https://www.builtbytim.dev/profile.jpg",
   sameAs: [
