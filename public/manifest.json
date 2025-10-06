@@ -1,44 +1,44 @@
 {
-  "name": "Timileyin Pelumi - Full Stack Developer Portfolio",
-  "short_name": "Tim Portfolio",
-  "description": "Portfolio of Timileyin Pelumi, a full-stack developer specializing in web development, AI, and blockchain applications",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
-  "orientation": "portrait-primary",
-  "categories": ["productivity", "business"],
-  "lang": "en",
-  "scope": "/",
-  "icons": [
-    {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/screenshot-wide.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Timileyin's Portfolio Desktop View"
-    },
-    {
-      "src": "/screenshot-narrow.png",
-      "sizes": "640x1136",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Timileyin's Portfolio Mobile View"
-    }
-  ],
-  "prefer_related_applications": false
-} 
+	"name": "Timileyin Pelumi (BuiltByTim) - Software Engineer & Product Builder",
+	"short_name": "BuiltByTim",
+	"description": "Portfolio of Timileyin Pelumi (BuiltByTim), a software engineer & product builder specializing in web development, AI, and blockchain applications",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#0f172a",
+	"theme_color": "#0f172a",
+	"orientation": "portrait-primary",
+	"categories": ["productivity", "business"],
+	"lang": "en",
+	"scope": "/",
+	"icons": [
+		{
+			"src": "/icon-192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	],
+	"screenshots": [
+		{
+			"src": "/screenshot-wide.png",
+			"sizes": "1280x720",
+			"type": "image/png",
+			"form_factor": "wide",
+			"label": "BuiltByTim's Portfolio Desktop View"
+		},
+		{
+			"src": "/screenshot-narrow.png",
+			"sizes": "640x1136",
+			"type": "image/png",
+			"form_factor": "narrow",
+			"label": "BuiltByTim's Portfolio Mobile View"
+		}
+	],
+	"prefer_related_applications": false
+}
