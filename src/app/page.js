@@ -1075,7 +1075,7 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/60">
+        <section id="experience" className="hidden py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/60">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 60 }}
@@ -1197,6 +1197,132 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Stats Section */}
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 hidden">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+            >
+              {/* Removed stats to reduce cognitive load and focus on conversion */}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Recent Builds Section */}
+        <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/50">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12 sm:mb-16"
+            >
+              <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
+                <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                  Recent Builds
+                </h2>
+              </div>
+              <p className="text-slate-400 text-sm sm:text-base">A few products I’ve shipped recently.</p>
+            </motion.div>
+
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="space-y-8 lg:space-y-12"
+            >
+              {projects.map((project, index) => (
+                <motion.div
+                  key={project.title}
+                  variants={fadeInUp}
+                  className="group relative"
+                >
+                  <div className="relative bg-slate-800/60 border border-slate-700 rounded-none overflow-hidden">
+                    <div className="flex flex-col lg:grid lg:grid-cols-2 gap-0">
+                      {/* Image Section */}
+                      <div className="relative overflow-hidden lg:order-1 p-4 sm:p-6 lg:p-6">
+                        <div className="relative w-full h-72 sm:h-80 lg:h-96">
+                          <Image src={project.image} alt={project.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                        </div>
+                        {/* Status removed for a cleaner card */}
+                      </div>
+
+                      {/* Content Section */}
+                      <div className="p-4 sm:p-6 lg:p-6 xl:p-8 flex flex-col justify-center lg:order-2">
+                        <div className="flex items-center space-x-2 sm:space-x-3 mb-2">
+                          <div className="p-1.5 sm:p-2 rounded-none bg-slate-700/60 border border-slate-600 text-slate-200">
+                            {project.icon}
+                          </div>
+                          <span className="text-slate-400 text-xs sm:text-sm uppercase tracking-wider font-medium truncate">
+                            {project.subtitle}
+                          </span>
+                        </div>
+
+                        <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+                          {project.title}
+                        </h3>
+
+                        <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed mb-5">
+                          {project.description}
+                        </p>
+                        {/* Key Contributions removed for concise card */}
+
+                        <div className="flex flex-wrap gap-2 sm:gap-2.5 mb-5">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 bg-slate-900/60 text-slate-200 text-xs sm:text-sm font-medium rounded-none border border-slate-700"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 lg:space-x-4">
+                          {project.links.demo && (
+                            <motion.a
+                              href={project.links.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              whileHover={{ scale: 1.05, y: -2 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="flex-1 flex items-center justify-center space-x-2 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-none font-semibold shadow-none hover:shadow-lg transition-all duration-200 text-sm sm:text-base"
+                            >
+                              <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                              <span>View Project</span>
+                            </motion.a>
+                          )}
+                          {project.links.github && (
+                            <motion.a
+                              href={project.links.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              whileHover={{ scale: 1.05, y: -2 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="flex-1 flex items-center justify-center space-x-2 py-3 sm:py-4 border border-slate-600 text-slate-300 rounded-none font-semibold hover:bg-slate-700/50 hover:border-slate-500 transition-all duration-200 text-sm sm:text-base"
+                            >
+                              <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+                              <span>Source Code</span>
+                            </motion.a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+
         {/* Testimonials Section */}
         <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/70">
           <div className="max-w-7xl mx-auto">
@@ -1223,7 +1349,7 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 id="testimonials-scroll"
-                className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 overflow-x-auto sm:overflow-visible scrollbar-hide snap-x snap-mandatory"
+                className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 overflow-x-auto sm:overflow-visible scrollbar-hide snap-x snap-mandatory "
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {[
@@ -1251,22 +1377,17 @@ export default function Home() {
 
                   },
 
-                  // {
-                  //   quote: "Timmy is a brilliant dev! I’m always impressed by his dedication and his ability to tackle complex challenges in short periods of time. He is a real asset to any team ",
-                  //   author: "Adewale Fatoki",
-                  //   position: "Software Engineer",
-                  //   linkedin: "https://linkedin.com/in/adewaleftk",
-                  // }
+
                 ].map((testimonial, index) => (
                   <motion.div
                     key={index}
                     variants={scaleIn}
                     whileHover={{ y: -4 }}
-                    className="group relative h-full flex-shrink-0 w-80 sm:w-auto snap-center"
+                    className="group relative h-full flex-shrink-0 w-80 sm:w-auto snap-center "
                     role="article"
                     aria-label={`Testimonial from ${testimonial.author}`}
                   >
-                    <div className="relative h-full flex flex-col bg-slate-800/60 border border-slate-700 rounded-none p-4 sm:p-5">
+                    <div className="relative h-full flex flex-col min-h-[320px] sm:min-h-[auto] bg-slate-800/60 border border-slate-700 rounded-none p-4 sm:p-5">
                       <div className="flex items-start gap-3 mb-4 text-left">
                         <Quote className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
                         <p className="text-slate-300 text-sm sm:text-base leading-relaxed flex-grow">
@@ -1368,160 +1489,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 hidden">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
-            >
-              {/* Removed stats to reduce cognitive load and focus on conversion */}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Recent Builds Section */}
-        <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/50">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-                  Recent Builds
-                </h2>
-              </div>
-              <p className="text-slate-400 text-sm sm:text-base">A few products I’ve shipped recently.</p>
-            </motion.div>
-
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="space-y-8 lg:space-y-12"
-            >
-              {projects.map((project, index) => (
-                <motion.div
-                  key={project.title}
-                  variants={fadeInUp}
-                  className="group relative"
-                >
-                  <div className="relative bg-slate-800/60 border border-slate-700 rounded-none overflow-hidden">
-                    <div className="flex flex-col lg:grid lg:grid-cols-2 gap-0">
-                      {/* Image Section */}
-                      <div className="relative overflow-hidden lg:order-1 p-4 sm:p-6 lg:p-6">
-                        <div className="relative w-full h-72 sm:h-80 lg:h-96">
-                          <Image src={project.image} alt={project.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
-                        </div>
-
-                        {/* Status Badge */}
-                        <div className="absolute top-3 right-3 sm:top-4 sm:right-4 lg:top-6 lg:right-6">
-                          <motion.div
-                            whileHover={{ scale: 1.1 }}
-                            className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r ${project.statusColor} text-white text-xs sm:text-sm font-semibold rounded-none shadow-lg`}
-                          >
-                            <Star className="w-3 h-3 sm:w-4 sm:h-4" />
-                            <span>{project.status}</span>
-                          </motion.div>
-                        </div>
-
-                        {/* Project Status Badge */}
-                      </div>
-
-                      {/* Content Section */}
-                      <div className="p-4 sm:p-6 lg:p-6 xl:p-8 flex flex-col justify-center lg:order-2">
-                        <div className="flex items-center space-x-2 sm:space-x-3 mb-2.5">
-                          <div className={`p-1.5 sm:p-2 rounded-none bg-gradient-to-r ${project.statusColor}`}>
-                            {project.icon}
-                          </div>
-                          <span className="text-slate-400 text-xs sm:text-sm uppercase tracking-wider font-medium">
-                            {project.subtitle}
-                          </span>
-                        </div>
-
-                        <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                          {project.title}
-                        </h3>
-
-                        <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8">
-                          {project.description}
-                        </p>
-
-                        <div className="space-y-2 mb-5">
-                          <div className="text-green-400 font-semibold text-sm sm:text-base mb-2"> Key Contributions:</div>
-                          {project.achievements.map((achievement, i) => (
-                            <div key={i} className="flex items-start space-x-2">
-                              <div className="w-1.5 h-1.5 bg-green-400 rounded-none mt-2"></div>
-                              <span className="text-slate-300 text-sm">{achievement}</span>
-                            </div>
-                          ))}
-                        </div>
-
-                        <div className="flex flex-wrap gap-2 sm:gap-2.5 mb-5">
-                          {project.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 bg-slate-900/60 text-slate-200 text-xs sm:text-sm font-medium rounded-none border border-slate-700"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 lg:space-x-4">
-                          <motion.a
-                            href={project.links.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ scale: 1.05, y: -2 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="flex-1 flex items-center justify-center space-x-2 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-none font-semibold shadow-none hover:shadow-lg transition-all duration-200 text-sm sm:text-base"
-                          >
-                            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
-                            <span>Live Demo</span>
-                          </motion.a>
-                          <motion.a
-                            href={project.links.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ scale: 1.05, y: -2 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="flex-1 flex items-center justify-center space-x-2 py-3 sm:py-4 border border-slate-600 text-slate-300 rounded-none font-semibold hover:bg-slate-700/50 hover:border-slate-500 transition-all duration-200 text-sm sm:text-base"
-                          >
-                            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-                            <span>View Code</span>
-                          </motion.a>
-                          {project.links.case_study && (
-                            <motion.a
-                              href={project.links.case_study}
-                              whileHover={{ scale: 1.05, y: -2 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="flex-1 flex items-center justify-center space-x-2 py-3 sm:py-4 border border-slate-600 text-slate-300 rounded-none font-semibold hover:bg-slate-700/50 hover:border-slate-500 transition-all duration-200 text-sm sm:text-base"
-                            >
-                              <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
-                              <span>Case Study</span>
-                            </motion.a>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* CTA Section removed; CTAs moved to hero */}
 
         {/* Contact Section */}
         <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/80" aria-labelledby="contact-heading">
