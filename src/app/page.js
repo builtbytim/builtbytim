@@ -769,7 +769,7 @@ export default function Home() {
                       <h3 className="text-white font-semibold text-sm sm:text-base">What I Do</h3>
                     </div>
                     <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                      Full-stack development across web, AI, and blockchain — used where they create real outcomes, not just noise.
+                      Full-stack development across web, AI, and blockchain — used where they create real outcomes.
                     </p>
                   </div>
 
@@ -848,11 +848,6 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* What I Do */}
-                  <div>
-                    <h3 className="text-white font-semibold text-base sm:text-lg mb-2">What I Do</h3>
-                    <p className="text-slate-300 text-sm">Full-stack development across web, AI, and blockchain — used where they create real outcomes, not just noise.</p>
-                  </div>
 
                   {/* Let’s Work */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
