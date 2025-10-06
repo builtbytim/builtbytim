@@ -1719,7 +1719,7 @@ export default function Home() {
                           className="w-full flex items-center justify-center space-x-2 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-none font-semibold shadow-lg hover:shadow-xl transition-all duration-200 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-800 disabled:opacity-60 disabled:cursor-not-allowed"
                           aria-label="Submit contact form"
                         >
-                          <Rocket className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+
                           <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                         </motion.button>
                       </form>
